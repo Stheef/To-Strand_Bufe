@@ -1,0 +1,59 @@
+{% include 'header.html.twig' %}
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+	<div class="contact-whole-bg background-filter">
+
+		<div class="container u-non-blurred">
+			
+			<div class="contact-parent u-non-blurred">
+				<div class="contact-child child1 u-non-blurred">
+					<h2>Lépjen kapcsolatba velünk</h2>
+					<p>
+						<i class="fas fa-map-marker-alt"></i>
+						Címünk
+						<br/>
+						<span>
+							Petőfi út 61.
+							<br/>
+							Bánk, Nógrád megye
+						</span>
+					</p>
+					<p>
+						<i class="fas fa-phone-alt"></i>
+						Hívjon minket
+						<br/>
+						<span>
+							06 70 123 4567</span>
+					</p>
+					<p>
+						<i class=" far fa-envelope"></i>
+						Email címünk
+						<br/>
+						<span>to-strand_bufe@gmail.com</span>
+					</p>
+				</div>
+				<div class="contact-child child2 u-non-blurred">
+					<div class="inside-contact ">
+						<h2>Írjon nekünk</h2>
+						<h3>
+							<span id="confirm"></h3>
+							<p>Név *</p>
+							<input id="txt_name" type="text" required="required">
+							<p>Email *</p>
+							<input id="txt_email" type="text" required="required">
+							<p>Telefonszám *</p>
+							<input id="txt_phone" type="text" required="required">
+							<p>Tárgy *</p>
+							<input id="txt_subject" type="text" required="required">
+							<p>Üzenet *</p>
+							<textarea id="txt_message" rows="4" cols="20" required="required"></textarea>
+							<input type="submit" id="btn_send" value="KÜLDÉS">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		{% include 'footer.html.twig' %}
+</body>

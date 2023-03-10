@@ -1,0 +1,107 @@
+-- ITALOK --
+
+ Alkoholok
+	Soproni - 580ft
+	Soproni Mangó - 650ft
+	Soproni IPA - 650ft
+	Soproni APA - 650ft
+	Soproni Démon - 650ft
+	Soproni Búza - 650ft
+	Soproni Radler 0,0% Meggy-Citrom - 580ft
+	Soproni Radler 0,0% Bodza-Citrom - 580ft
+	Dreher - 580ft
+	Gösser NaturZitrone 0,0% Citrom - 580ft
+	Gösser NaturZitrone 0,0% Áfonya-Citrom - 580ft
+	Gösser NaturZitrone 0,0% Mangó-Citrom - 580ft
+	Gösser NaturZitrone 0,0% Dinnye-Lime - 580ft
+	Heineken - 650ft
+	Heineken 0,0% - 650ft
+	Heineken Silver 0,3dl - 600ft
+	Somersby Alma - 650ft
+	Somersby Körte - 650ft
+ Üdítők, egyéb italok
+	Pepsi 0,5l - 590ft
+	Pepsi Max 0,5l - 590ft
+	Pepsi Max Mangó 0,5l - 590ft
+	Pepsi Max Lime 0,5l - 590ft
+	Pepsi Max Ananász-Menta 0,5l - 590ft
+	Schweppes Narancs 0,5l - 590ft
+	Schweppes Citrus 0,5l - 590ft
+	Schweppes Tonic 0,5l - 590ft
+	Lipton Citrom 0,5l - 590ft
+	Lipton Barack 0,5l - 590ft
+	Lipton Zöld 0,5l - 590ft
+	Canada Dry 0,5l - 590ft
+	Toma Multivitamin 0,5l - 590ft
+	Toma Meggy-Alma 0,5l - 590ft
+	Toma 100% Narancs 0,33l - 450ft
+	Toma 100% Alma 0,33l - 450ft
+	Toma 100% Őszibarack 0,33l - 450ft
+	Theodora szénsavmentes 0,5l - 400ft
+	Theodora szénsavas 0,5l - 400ft
+
+-- ÉTELEK --
+
+ Lángos
+	Sima - 800ft
+	Sajtos - 1000ft
+	Tejfölös - 1000ft
+	Sajtos tejfölös - 1200ft
+	Sajtos tejfölös lilahagymás - 1350ft
+	Sajtos tejfölös paradicsomkarikás - 1350ft
+ Frissensültek
+	Csirke nuggets (10db) + öntet - 2200ft
+	Rántott csirkemell - 2500ft
+	Rántott szelet - 2500ft
+	Rántott sajt - 2400ft
+	Gyros tál - 2800ft
+	Hekk (~35-40dkg) - 1750~2000ft
+ Hamburgerek
+	Sima - 1300ft
+	Sajtburger - 1600ft
+	BBQ burger - 1500ft
+	Ördög burger - 1500ft
+	Vega burger - 1600ft
+ Hot-Dog
+	Sima - 650ft
+	Pirított hagymás - 750ft
+	Sajtos - 800ft
+	Sajtos-Pirított hagymás - 850ft
+	Zöldséges - 750ft
+ Köretek
+	Hasábburgonya (kis adag) - 650ft
+	Hasábburgonya (nagy adag) - 900ft
+	Dollár chips + öntet - 1200ft
+	Tócsni + öntet - 1300ft
+	Hagymakarika + öntet - 1300ft
+	Kevert saláta - 800ft
+	Savanyúság (vegyes) - 750ft
+	Kenyér (2 szelet) - 250ft
+ Öntetek
+	Ketchup - 300ft
+	Majonéz - 300ft
+	Mustár - 300ft
+	BBQ szósz - 300ft
+	Tzatziki - 500ft
+	Fokhagymás tejföl - 500ft
+	Csípős öntet - 500ft
+ Desszertek
+	Lekváros palacsinta (2db) - 500ft
+	Kakaós palacsinta (2db) - 500ft
+	Túrós palacsinta (2db) - 500ft
+	Mogyorókrémes palacsinta (2db) - 500ft
+	
+	
+	
+	
+
+	
+	
+
+
+
+
+	
+
+	
+	

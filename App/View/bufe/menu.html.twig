@@ -1,0 +1,117 @@
+{% include 'header.html.twig' %}
+<body class"">
+	<div class="container menu-design">
+		<br>
+		<br>
+		<br>
+		<div class="menu-header">
+			<h2>ÉTLAP<h2></div>
+				<div class="menu-block-design filter">
+					<input type="search" id="myInput" placeholder="Keresés.." name="search" class="searchbox-input" onkeyup="buttonUp();" required>
+					<br>
+					<br>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="flowers-wrap">
+								<p class="filter-title">
+									<strong>SZŰRÉS</strong>
+								</p>
+								<form>
+									{% for category in categories %}
+										<label><input type="checkbox" name="{{category.catname}}" value="{{category.catname}}" id="{{category.id}}"/>
+											{{category.catname}}</label><br>
+
+									{% endfor %}
+								</form>
+							</div>
+						</div>
+						<div class="col-md-8">
+							<div class="row">
+								{% for item in items %}
+									<div class="blokkok col-md-4 ">
+										<div class="food-card">
+											<div class="food-card_img">
+												<img src="https://i.imgur.com/eFWRUuR.jpg" alt="{{item.name}}">
+											</div>
+											<div class="food-card_content" data-category="{{item.name}}">
+												<div class="food-card_title-section">
+													<h5 class="food-card_title">{{ item.nev }}</h5>
+													<p class="food-card_author">{{ item.catname }}</p>
+												</div>
+												<div class="food-card_bottom-section">
+													<hr>
+													<div class="space-between">
+														<div class="food-card_price">
+															<span>{{item.unit_price}}
+																Ft</span>
+														</div>
+														<div class="">
+															<a class="food-card_cart">
+																<i class="fa-solid fa-cart-plus"></i>
+															</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			{% include 'footer.html.twig' %}
+			<script>
+				var $filterCheckboxes = $('input[type="checkbox"]');
+var filterFunc = function () {
+
+var selectedFilters = {};
+
+$filterCheckboxes.filter(':checked').each(function () {
+
+if (! selectedFilters.hasOwnProperty(this.name)) {
+selectedFilters[this.name] = [];
+}
+
+selectedFilters[this.name].push(this.value);
+});
+
+// create a collection containing all of the filterable elements
+var $filteredResults = $('.food-card');
+
+// loop over the selected filter name -> (array) values pairs
+$.each(selectedFilters, function (name, filterValues) { // filter each .flower element
+$filteredResults = $filteredResults.filter(function () {
+
+var matched = false,
+currentFilterValues = $(this).data('category');
+
+// loop over each category value in the current .flower's data-category
+$.each(currentFilterValues, function (_, currentFilterValue) {
+
+// if the current category exists in the selected filters array
+// set matched to true, and stop looping. as we're ORing in each
+// set of filters, we only need to match once
+
+if ($.inArray(currentFilterValue, filterValues) != -1) {
+matched = true;
+return false;
+}
+});
+
+// if matched is true the current .flower element is returned
+return matched;
+
+});
+});
+
+$('.food-card').hide().filter($filteredResults).show();
+}
+
+$filterCheckboxes.on('change', filterFunc);
+			</script>
+		</body>
+	</html>
+</body>

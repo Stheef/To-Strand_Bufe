@@ -1,0 +1,76 @@
+Szakdolgozat
+------------
+
+Formai követelmények:
+- A4-es papírméret
+- Álló tájolás (kivétel nagyobb ábrák, táblázatok, melyek fekvõ tájolás mellett láthatók csak)
+- 2,5 cm-es margó egységesen, kötésmargó 1 cm (bal oldalon), nyomtatásnál 1 lapra 1 oldal kerüljön (Nem két oldalas nyomtatás!!!)
+- Folyamatos oldalszámozás élõláb részben középen (A borító lapon nincs oldalszám)
+- Törzs szöveg:
+  - 12-es betûméret, betûtípus: Times New Roman vagy Arial vagy Calibri (kivétel forráskód, ott lehet Coruier New) 
+  - bekezdések sortávolsága: 1,5 sor vagy Többszörös (1,08)
+  - bekezdések igazítása: sorkizárt (kivétel forráskód, ott balra igazított)
+  - címsorok többszintû listában, a tartalomjegyzékben legfeljebb a 4. szintig szerepeljenek csak
+- Idézetek: lábjegyzetben megjelölve a forrást
+Tartalmi követelmények:
+- Külsõ borítólap (mellékelt minta alapján) 
+- Belsõ borítólap (mellékelt minta alapján)
+- Hallgatói nyilatkozat (mellékelt minta alapján) Fontos: nyomtatás után aláírni!!!
+- Konzultációs lap (mellékelt minta alapján)
+- Tartalomjegyzék
+- Témaválasztás
+- 1. Fejlesztõi dokumentáció
+  1.1
+  1.2.1
+  1.2.2
+  1.3
+  stb.
+- 2. Felhasználói dokumentáció
+  2.1
+  2.2.1
+  2.2.2
+  2.3
+  stb.
+- 3. Irodalomjegyzék
+- 4. Mellékletek
+
+
+Fontos:
+- Kettõ, kinyomtatott (fûzött vagy kötött) példányt kell leadni, ebbõl az egyik mindenképpen az iskolánál marad! A másik példányt visszakapják! Mindegyik példányhoz kell, hogy tartozzon melléklet is!
+- A forrásállományokat, dokumentációt feltölteni github (publikus link).
+- A kinyomtatott szakdolgozat tartalmazhat egy "zsebet", ahol a mellékelt adathordozó elfér! 
+  Ha a melléklet CD/DVD, akkor az legyen felirattal ellátva (alkoholos filctollal vagy nyomtatva): készítõk neve és a 2023 évszám.
+  Ha pendrive vagy SD kártya, akkor egy "tasak"-ban legyenek, ahol a "tasak" legyen felirattal ellátva (tollal vagy nyomtatva): készítõk neve és a 2023 évszám.  
+
+Témaválasztás:
+  Témaválasztás és annak indoklása, készítõk feladatainak rövid ismertetése.
+  Fontos: Majd a késõbbi fejlesztõi, felhasználói dokumentáció egyes részeinél is jelezni, hogy azt ki készítette! Olyan semiképpen sem lehet, hogy "mindent közösen készítettünk"!!!
+
+Fejlesztõi dokumentációnak tartalmaznia kell:
+- Alkalmazás rövid, általános ismertetését, hol és kik és mire használhatják.
+- Fejlesztõi környezetet
+- Adatszerkezet (sql szerver, adatbázis neve, tároló motor, illesztés, adattáblák részletes ismertetése, kapcsolatok)
+- Használati esetmodell, szerepkörök
+- Osztályok, modulok, menüpontok ismertetése
+- Tesztelés, tesztesetek
+- Továbbfejlesztési lehetõségek
+
+Felhasználói dokumentációnak tartalmaznia kell:
+- Alkalmazás rövid, általános ismertetését, hol és kik és mire használhatják.
+- Rendszerkövetelmények
+- Alkalmazás telepítése, szükséges beállítások
+- Alkalmazás használata
+
+Irodalomjegyzék:
+- Könyvek esetén: szerzõ(k), cím, kiadó, kiadás éve
+- Internetes források esetén: megnevezés, url
+
+Mellékletek:
+A kinyomtatott szakdolgozathoz mellékelni kell: CD/DVD vagy pendrive vagy SD kártya, amin szerepel: 
+- Alkalmazás forrásai
+- Mûködéséhez szükséges programok, bõvítmények, telepítõk
+- Adatbázishoz tartozó dump sql fájl (egyik "üres", másik teszteléshez szükséges adatokkal)
+- Teszteléshez szükéges belépési adatok (név+jelszó)
+- Szakdolgozat dokumentáció (word és pdf formátumban is)
+Ezeket érdemes külön mappákba szervezve tárolni és itt a mellékletek résznél ezen mappák+tartalmak ismertetése, felsorolása történik.
+Ha van rá lehetõség, akkor lehet online web-es elérés, és akkor ennek az url-je, adatai is a melléklet részét képezi.

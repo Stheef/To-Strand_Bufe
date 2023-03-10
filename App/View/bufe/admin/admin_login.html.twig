@@ -1,0 +1,43 @@
+<html lang="hu">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Admin belépés</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+		<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="App/css/admin_style.css">
+	</head>
+
+	<body>
+
+		<section class="form-container">
+			<form action="/login" method="POST" class="needs-validation">
+				<h3>Admin bejelentkezés</h3>
+				<p>felhasználónév =
+					<span>admin</span>
+					& jelszó =
+					<span>admin</span>
+				</p>
+				<div class="center">
+					<div class="form-floating mb-3 form-group ">
+						<input type="text" class="form-control box" id="floatingInput validationCustom01" name="userName" id="userName" required placeholder="Felhasználónév">
+						<label for="floatingInput validationCustom01">Felhasználónév</label>
+					</div>
+					<div class="form-floating form-group">
+						<input type="password" class="form-control box" id="floatingPassword" name="password" id="password" required placeholder="Jelszó">
+						<label for="floatingPassword">Jelszó</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<input type="submit" class="btn btn-primary mt-3" name="login" id="login" value="Belépés">
+				</div>
+
+			</form>
+		</section>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+	</body>
+
+</html>

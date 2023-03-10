@@ -1,0 +1,39 @@
+{% include 'header.html.twig' %}
+<div class="modal-dialog modal-login">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Regisztráció</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form method="POST" action="/register">
+              <div class="form-group">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" class="form-control" name="user_name" placeholder="Felhasználó neve" required="required">
+              </div>
+              <div class="form-group">
+                <i class="fa-solid fa-phone"></i>
+                <input type="tel" class="form-control" name="phone_number" placeholder="Telefonszáma" required="required">
+              </div>
+              <div class="form-group">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" class="form-control" name="email" placeholder="Email címe" required="required">
+              </div>
+              <div class="form-group">
+                <i class="fa fa-lock"></i>
+                <input type="password" class="form-control" name="password" placeholder="Jelszava" required="required">
+              </div>
+              <div class="form-group">
+                <i class="fa fa-lock"></i>
+                <input type="password" class="form-control" name="password2" placeholder="Jelszó megerősítése" required="required">
+              </div>
+              <div class="form-group">
+                <input type="submit" class="btn btn-block btn-lg" name="register" value="Regisztráció">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            
+          </div>
+        </div>
+</div>

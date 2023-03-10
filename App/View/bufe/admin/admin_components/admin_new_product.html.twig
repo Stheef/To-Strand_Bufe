@@ -1,0 +1,49 @@
+{% include 'header.html.twig' %}
+    <div class="container mt-5 d-flex justify-content-center">
+        <div class="col-sm-6">
+        <h1 class="display-3 text-center mb-5"> Új jármű</h1>
+            <form action="/vehicleAdd" method="POST">
+                <div class="form-group">
+                    <label for="rendszam">Rendszám*</label>
+                    <input type="text" class="form-control" name="rendszam" id="rendszam" required>
+                </div>
+                <div class="form-group">
+                    <label for="gyarto">Gyártó*</label>
+                    <input type="text" class="form-control" name="gyarto" id="gyarto" required>
+                </div>
+                <div class="form-group">
+                    <label for="tipus">Típus*</label>
+                    <input type="text" class="form-control" name="tipus" id="tipus" required>
+                </div>
+                <div class="form-group">
+                    <label for="motorterfogat">Motortérfogat*</label>
+                    <input type="number" class="form-control" min="0" step="1" name="motorterfogat" id="motorterfogat">
+                </div>
+                    <div class="form-group">
+                    <label for="szallithatoSzemelyekSzama">Szállítható személyek száma*</label>
+                    <input type="number" class="form-control" min="0" step="1"  name="szallithatoSzemelyekSzama" id="szallithatoSzemelyekSzama" required>
+                </div>
+                <div class="form-group">
+                    <label for="gyartasiEv">Gyártási év*</label>
+                    <input type="number" class="form-control" min="0" step="1" name="gyartasiEv" id="gyartasiEv">
+                </div>
+                <div class="form-check mt-3">
+                    <input type="checkbox" name="allapot" id="allapot" checked>
+                    <label for="allapot">Aktív</label>
+                </div>
+                <div class="form-group">
+                    <label for="jarmuKategoria">Kategória</label>
+                    <select class="form-select" name="jarmuKategoria" id="jarmuKategoria">
+                        {% for vehicleCategory in vehicleCategories %}
+                        <option value="{{vehicleCategory.id}}">{{vehicleCategory.megnevezes}}</option>
+                        {% endfor %}
+                    </select>
+                </div>  
+                <div class="form-group mt-3 justify-content-between d-flex">
+                    <a href="javascript:history.go(-1)" class="btn btn-warning"> <i class="fa-solid fa-arrow-left"></i> Vissza</a>
+                    <button type="submit" class="btn btn-success text-white" name="save"> <i class="fa-solid fa-floppy-disk"></i> MENT </button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% include 'footer.html.twig' %}

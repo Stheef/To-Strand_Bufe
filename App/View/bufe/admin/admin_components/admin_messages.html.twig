@@ -1,0 +1,54 @@
+{% include 'bufe/admin/admin_header.html.twig' %}
+
+<div class="container-fluid">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTableMessages" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th hidden>Id</th>
+              <th>Név</th>
+              <th>Email</th>
+              <th>Telefonszám</th>
+              <th>Tárgy</th>
+              <th>Üzenet</th>
+              <th>Műveletek</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for product in products %}
+            <tr>
+              <td hidden>{{product.id}}</td>
+              <td>
+              <div class="d-flex align-items-center">
+                <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="Termék képe" style="width: 45px; height: 45px" class="rounded-circle" />
+                <div class="ms-3">
+                  <p class="fw-bold mb-1">{{product.nev}}</p>
+                </div>
+                </div
+              </td>
+              <td>{{product.type ? 'Étel' : 'Ital'}}</td>
+              <td>{{product.name}}</td>
+              <td>{{prodcut.description}}</td>
+              <td>{{product.unit_price}}</td>
+              <td>
+                <a class='btn btn-warning' href='itemEdit/{{product.id}}' data-toggle="modal" data-target="#editModal">
+                  <i class="fa-solid fa-edit"></i> Módosít</a>
+                <a class='btn btn-danger' href='itemDelete/{{product.id}}' data-toggle="modal"
+                  data-target="#deleteModal"><i class="fa-solid fa-trash"></i> Töröl</a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include 'bufe/admin/admin_footer.html.twig' %}
+
+</body>
+
+</html>

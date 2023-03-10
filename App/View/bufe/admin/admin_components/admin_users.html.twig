@@ -1,0 +1,70 @@
+{% include 'bufe/admin/admin_header.html.twig' %}
+<div class="container-fluid">
+	<a class='btn second-color mb-2' href='' data-toggle="modal" data-target="#addDataModal">
+		<i class="fa-solid fa-circle-plus"></i>
+		Új termék</a>
+	<div class="card shadow mb-4">
+		<div class="card-body">
+			<div class="table-responsive">
+				<table class="table table-bordered" id="dataTableUsers" width="100%" cellspacing="0">
+					<thead>
+						<tr>
+							<th hidden>Id</th>
+							<th>Felhasználó név</th>
+							<th>Email cím</th>
+							<th>Telefonszáma</th>
+							<th>Rendelések száma</th>
+              <th>Műveletek</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for user in users %}
+							<tr>
+								<td hidden>{{user.id}}</td>
+								<td>
+									<div class="d-flex align-items-center">
+										<div class="ms-3">
+											<p class="fw-bold mb-1">{{user.user_name}}</p>
+										</div>
+									</div</td>
+								</td>
+								<td>{{user.email}}</td>
+								<td>{{user.phone_number}}</td>
+								<td>{{prodcut.orders}}</td>
+								<td>
+									<a class='btn btn-danger' href='itemDelete/{{user.id}}' data-toggle="modal" data-target="#deleteModal">
+										<i class="fa-solid fa-trash"></i>
+										Töröl</a>
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<div class="modal fade" id="deleteModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <form action="update.php" id="edit-form">
+          <input type="hidden" value="{{admin.id}}" name="id">
+          <div class="text-center">
+            <i class="fa-regular fa-circle-xmark rcross"></i>
+            <p>Biztosan törölni szeretné {{admin.user_name}} nevű fiókot?</p>
+          </div>
+          <button type="button" class="btn btn-warning" data-dismiss="modal" name="insert" id="insert"><i
+              class="fa-solid fa-arrow-left"></i> Mégse</button>
+          <button type="button" class="btn btn-danger float-right"><i
+              class="fa-solid fa-xmark"></i> Törlés</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% include 'bufe/admin/admin_footer.html.twig' %}
