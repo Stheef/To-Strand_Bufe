@@ -12,7 +12,7 @@
 }
 
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -158,7 +158,7 @@ section {
 }
 
 .title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-transform: none;
   color: var(--title-color);
   margin: 50px auto 10px auto;
@@ -310,7 +310,6 @@ section {
   }
 }
 
-
 /*  ******* Navbar ******* */
 a {
   text-decoration: none;
@@ -330,7 +329,6 @@ h2,
 h3 {
   text-transform: none;
   font-weight: 600;
-  font-family: "Lato", sans-serif;
   text-align: center;
 }
 
@@ -432,7 +430,7 @@ section {
 
 #header.header-scrolled {
   height: 60px;
-  background-color: rgba(255,255,255,1);
+  background-color: rgba(255, 255, 255, 1);
   box-shadow: 0px 0px 2px 2px #ccc;
 }
 #header.header-scrolled ul li a {
@@ -449,6 +447,12 @@ section {
 
 .header-scrolled .icons a i {
   color: black;
+  opacity: 0.6;
+}
+
+.header-scrolled .icons a i:hover {
+  opacity: 1;
+  transition: 0.3s;
 }
 
 .header-scrolled a:before {
@@ -466,7 +470,6 @@ section {
 
 #header .logo h1 {
   font-size: 28px;
-  margin-left: 10px;
   line-height: 1;
   font-weight: 700;
   letter-spacing: 3px;
@@ -481,6 +484,17 @@ section {
   padding: 0;
   margin: 0;
   max-height: 40px;
+}
+
+#header .badge{
+  position: absolute;
+  transform-origin: top right;
+  color: var(--white);
+  background-color: var(--main-brown);
+  border-radius: 20px;
+  font-size: 8px;
+  margin-left: -4px;
+  margin-top: -8px;
 }
 
 /*-------------------------------------------------------------- # Navigation Menu --------------------------------------------------------------*/
@@ -615,9 +629,18 @@ section {
     color: white;
   }
 
-  .icons a i{
-    color: white;
+  .icons .fa-user {
+    margin-right: 20px;
+  }
+  .icons a i {
     font-size: 20px;
+    color: white;
+    opacity: 0.8;
+    cursor: pointer;
+  }
+  .icons a i:hover {
+    opacity: 1;
+    transition: 0.3s;
   }
 }
 
@@ -734,16 +757,109 @@ section {
     background: rgba(255, 255, 255, 0.8);
     z-index: 9996;
   }
+  .icons {
+    margin-left: auto;
+    margin-right: 0;
+  }
   .icons a i {
-    font-size: 16px;
+    font-size: 18px;
     color: white;
     margin-left: 10px;
+    opacity: 0.8;
+    cursor: pointer;
+  }
+  .icons a i:hover {
+    opacity: 1;
+    transition: 0.3s;
   }
 }
 
 .no-border {
   box-shadow: none !important;
   border: none !important;
+}
+
+/*-------------------------------------------------------------- # Shopping cart --------------------------------------------------------------*/
+.header .shopping-cart {
+  position: absolute;
+  top: 115%;
+  right: -105%;
+  background: var(--white);
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  width: 35rem;
+  padding: 2rem;
+}
+
+.header .shopping-cart.active {
+  right: 2rem;
+  -webkit-transition: 0.4s linear;
+  transition: 0.4s linear;
+}
+
+.header .shopping-cart .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.header .shopping-cart .box .fa-times {
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #666;
+  cursor: pointer;
+}
+
+.header .shopping-cart .box .fa-times:hover {
+  color: maroon;
+}
+
+.header .shopping-cart .box img {
+  height: 10rem;
+}
+
+.header .shopping-cart .box .content h3 {
+  font-size: 1.7rem;
+  padding-bottom: 0.5rem;
+  color: #222;
+}
+
+.header .shopping-cart .box .content span {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.header .shopping-cart .box .content span.multiply {
+  margin: 0 0.5rem;
+}
+
+.header .shopping-cart .total {
+  color: #666;
+  text-align: center;
+  font-size: 2.2rem;
+}
+
+.header .shopping-cart .total span {
+  color: #222;
+}
+
+.header .shopping-cart .btn {
+  text-align: center;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 13px;
+  box-shadow: none;
 }
 
 /*  ******* Jumbotron ******* */
@@ -963,11 +1079,9 @@ p.first::first-letter {
   }
 }
 
-
 /* ******* Service ******* */
 
-#service h1{
-  font-family: "Lato", sans-serif;
+#service h1 {
   text-transform: none;
   color: var(--title-color);
   margin: 50px auto 10px auto;
@@ -1014,7 +1128,6 @@ p.first::first-letter {
 }
 
 #gallery h3 {
-  font-family: "Lato", sans-serif;
   text-transform: none;
   color: var(--title-color);
   margin: 50px auto 10px auto;
@@ -1065,7 +1178,7 @@ p.first::first-letter {
   -moz-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  font-family: "Lato", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: bold;
 }
@@ -1402,10 +1515,9 @@ p.first::first-letter {
   transition: all 1s ease;
 }
 
-#footer .to-top i{
+#footer .to-top i {
   margin-left: -2px;
 }
-
 
 /* ***** Item card ***** */
 .food-card {
@@ -1413,12 +1525,14 @@ p.first::first-letter {
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 30px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
   transition: all 0.6s ease;
   flex: 0 0 auto;
 }
 .food-card:hover {
-  box-shadow: rgba(176, 142, 107, 0.5) -5px 5px, rgba(176, 142, 107, 0.5) -10px 10px ;
+  box-shadow: rgba(176, 142, 107, 0.5) -5px 5px,
+    rgba(176, 142, 107, 0.5) -10px 10px;
 }
 .food-card .food-card_img {
   display: block;
@@ -1467,7 +1581,16 @@ p.first::first-letter {
 .food-card .food-card_content .food-card_bottom-section .food-card_subscribers {
   margin-left: 17px;
 }
-.food-card .food-card_content .food-card_bottom-section .food-card_subscribers img, .food-card .food-card_content .food-card_bottom-section .food-card_subscribers .food-card_subscribers-count {
+.food-card
+  .food-card_content
+  .food-card_bottom-section
+  .food-card_subscribers
+  img,
+.food-card
+  .food-card_content
+  .food-card_bottom-section
+  .food-card_subscribers
+  .food-card_subscribers-count {
   height: 45px;
   width: 45px;
   border-radius: 45px;
@@ -1476,10 +1599,19 @@ p.first::first-letter {
   float: left;
   background: #f5f5f5;
 }
-.food-card .food-card_content .food-card_bottom-section .food-card_subscribers .food-card_subscribers-count {
+.food-card
+  .food-card_content
+  .food-card_bottom-section
+  .food-card_subscribers
+  .food-card_subscribers-count {
   position: relative;
 }
-.food-card .food-card_content .food-card_bottom-section .food-card_subscribers .food-card_subscribers-count span {
+.food-card
+  .food-card_content
+  .food-card_bottom-section
+  .food-card_subscribers
+  .food-card_subscribers-count
+  span {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1495,7 +1627,11 @@ p.first::first-letter {
 .food-card .food-card_content .food-card_bottom-section .food-card_order-count {
   width: 130px;
 }
-.food-card .food-card_content .food-card_bottom-section .food-card_order-count input {
+.food-card
+  .food-card_content
+  .food-card_bottom-section
+  .food-card_order-count
+  input {
   background: #f5f5f5;
   border-color: #f5f5f5;
   -webkit-box-shadow: none;
@@ -1518,20 +1654,19 @@ p.first::first-letter {
 
 @media (min-width: 992px) {
   .food-card--vertical {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      position: relative;
-      height: 100px;
- }
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    height: 100px;
+  }
   .food-card--vertical .food-card_img img {
-      width: 200px;
-      height: 100%;
-      -o-object-fit: cover;
-      object-fit: cover;
- }
+    width: 200px;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
 }
-
 
 /* ***** Modal ***** */
 .modal-login {
@@ -1782,25 +1917,25 @@ p.first::first-letter {
     background-color: #fff;
   }
 }
-.menu-header{
+.menu-header {
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-flow: column;
-  min-height: 10rem;  
+  min-height: 10rem;
 }
 
-.menu-header h2{
+.menu-header h2 {
   font-size: 7rem;
-  color:#182c39;
+  color: #182c39;
   text-transform: capitalize;
   padding-top: 50px;
   font-family: monospace;
   padding-bottom: none;
 }
 #myInput {
-  background-image: url(''); /* Add a search icon to input */
+  background-image: url(""); /* Add a search icon to input */
   background-color: white;
   background-position: 10px 12px; /* Position the search icon */
   background-repeat: no-repeat; /* Do not repeat the icon image */
@@ -1809,22 +1944,23 @@ p.first::first-letter {
   font-weight: 500;
   color: #182c39;
   padding: 12px 20px 12px 40px; /* Add some padding */
-  border: 1.5px solid white ; /* Add a grey border */
+  border: 1.5px solid white; /* Add a grey border */
   border-radius: 10px;
   margin-bottom: 100px; /* Add some space below the input */
   display: block;
   margin: 0 auto;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
 }
 
 .flowers-wrap {
-  float:left;
-  width:70%;
-  margin:0 5% 5% 5%;
+  float: left;
+  width: 70%;
+  margin: 0 5% 5% 5%;
   margin-left: 15%;
   padding-left: 10px;
   padding-bottom: 10px;
-  position:relative;
+  position: relative;
   justify-content: center;
   font-size: 18px;
   border: 2px solid #fff;
@@ -1833,11 +1969,11 @@ p.first::first-letter {
   background-color: white;
   font-weight: 400;
   font-family: Arial, Helvetica, sans-serif;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
 }
 
-
-.filter-title{
+.filter-title {
   font-size: 22px;
   font-family: monospace;
   font-weight: 700;
@@ -1846,13 +1982,14 @@ p.first::first-letter {
   display: center;
   text-align: center;
 }
-.menu-design{
+.menu-design {
   background-color: gainsboro;
 }
 
 /* ***** Stats Counter ***** */
 .stats-counter {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/wooden_table.jpg") center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/wooden_table.jpg") center center;
   background-size: cover;
   padding: 100px 0;
 }
@@ -1882,7 +2019,6 @@ p.first::first-letter {
   font-weight: 700;
   color: rgba(255, 255, 255, 0.6);
 }
-
 
 /* ***** About us main page ***** */
 .aboutus {
@@ -1920,7 +2056,7 @@ p.first::first-letter {
   padding: 0;
 }
 
-.aboutus .content ul li+li {
+.aboutus .content ul li + li {
   margin-top: 15px;
 }
 
@@ -1969,3 +2105,8 @@ p.first::first-letter {
   }
 }
 
+/* ***** Checkout ***** */
+.gradient-custom {
+  background: linear-gradient(to right, #bdc3c7, #182c39);
+  height: 100vh;
+}

@@ -10,7 +10,7 @@ use App\Controller\HomeController;
 use App\Controller\MenuController;
 use App\Controller\AboutController;
 use App\Controller\ContactController;
-use App\Controller\CartController;
+use App\Controller\CheckoutController;
 use App\Controller\RegisterController;
 use App\Controller\EmailController;
 use App\Controller\Admin\AdminLoginController;
@@ -48,8 +48,9 @@ Router::get('/kapcsolat', function () {
 
 
 Router::get('/kosar', function () {
-    return ((new CartController())->list());
+    return ((new CheckoutController())->list());
 });
+
 
 Router::get('/regisztracio', function () {
     return ((new RegisterController())->list());
@@ -58,6 +59,7 @@ Router::get('/regisztracio', function () {
 Router::post('/regisztracio', function(){
     return ((new EmailController()));
 });
+
 
 //----------------ADMIN----------------//
 Router::post('/login', function () {

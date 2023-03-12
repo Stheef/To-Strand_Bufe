@@ -1,3 +1,5 @@
+
+
 $(document).ready(function(){
     $('#insert_form').on("submit", function(event){  
      event.preventDefault();  
@@ -17,7 +19,7 @@ $(document).ready(function(){
      else  
      {  
       $.ajax({  
-       url:"BufeDao.php",  
+       url:"/",  
        method:"POST",  
        data:$('#insert_form').serialize(),  
        beforeSend:function(){  

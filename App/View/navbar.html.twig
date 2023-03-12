@@ -1,62 +1,105 @@
 <div class="L-tewelve">
-  <div class="row">
-    <header id="header" class="header fixed-top d-flex align-items-center header-transparent">
-      <div class="container d-flex align-items-center justify-content-between">
-        <a href="/to-strand-bufe" class="logo d-flex align-items-center me-auto me-lg-0">
-          <!-- <img src="assets/img/logo.png" alt=""> -->
-          <h1>Tó-Strand Büfé</h1>
-        </a>
-        <nav id="navbar" class="navbar no-border">
-          <ul>
-            <li><a href="/rolunk">Rólunk</a></li>
-            <li><a href="/etlap">Étlap</a></li>
-            <li><a href="/kapcsolat">Kapcsolat</a></li>
-          </ul>
-        </nav>
-        <div class="icons animation">
-          <a href="" data-toggle="modal" data-target="#myModal"><i class="fa-solid fa-user"></i></a>
-          <a href="#" class="dropdown"><i class="fa-solid fa-cart-shopping"></i>
-            <div>
+	<div class="row">
+		<header id="header" class="header fixed-top d-flex align-items-center header-transparent">
+			<div class="container d-flex align-items-center justify-content-between">
+				<a
+					href="/to-strand-bufe" class="logo d-flex align-items-center me-auto me-lg-0">
+					<!-- <img src="assets/img/logo.png" alt=""> -->
+					<h1>Tó-Strand Büfé</h1>
+				</a>
+				<nav id="navbar" class="navbar no-border">
+					<ul>
+						<li><a href="/rolunk">Rólunk</a></li>
+						<li><a href="/etlap">Étlap</a></li>
+						<li><a href="/kapcsolat">Kapcsolat</a></li>
+					</ul>
+				</nav>
+				<div class="icons animation">
+					<a href="" data-toggle="modal" data-target="#myModal">
+						<i class="fa-solid fa-user"></i>
+					</a>
+					<a id="cart-btn">
+						<i class="fa-solid fa-shopping-cart"></i>
+						<span class="badge badge-counter">3</span>
+					</a>
+				</div>
+				<i class="mobile-nav-toggle mobile-nav-show bi bi-list animation"></i>
+				<i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x animation"></i>
+			</div>
+			<div class="shopping-cart">
+				<div class="text-center">
+					<h1>Kosár</h1>
+				</div>
+				<div class="box">
+					<i class="fas fa-times"></i>
+					<img src="image/cart-1.jpg" alt="">
+					<div class="content">
+						<h3>organic food</h3>
+						<span class="quantity">1</span>
+						<span class="multiply">x</span>
+						<span class="price">$18.99</span>
+					</div>
+				</div>
+				<div class="box">
+					<i class="fas fa-times"></i>
+					<img src="image/cart-2.jpg" alt="">
+					<div class="content">
+						<h3>organic food</h3>
+						<span class="quantity">1</span>
+						<span class="multiply">x</span>
+						<span class="price">$18.99</span>
+					</div>
+				</div>
+				<div class="box">
+					<i class="fas fa-times"></i>
+					<img src="image/cart-3.jpg" alt="">
+					<div class="content">
+						<h3>organic food</h3>
+						<span class="quantity">1</span>
+						<span class="multiply">x</span>
+						<span class="price">$18.99</span>
+					</div>
+				</div>
+				<h3 class="total">
+					Összesen :
+					<span>56.97 Ft</span>
+				</h3>
+				<a href="/kosar" class="btn btn-success">Tovább a pénztárhoz</a>
+			</div>
+		</header>
 
-            </div>
-          </a>
-        </div>
-        <i class="mobile-nav-toggle mobile-nav-show bi bi-list animation"></i>
-        <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x animation"></i>
-      </div>
-    </header>
 
-    <div id="myModal" class="modal fade">
-      <div class="modal-dialog modal-login">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Bejelentkezés</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          </div>
-          <div class="modal-body">
-            <form action="/examples/actions/confirmation.php" method="post">
-              <div class="form-group">
-                <i class="fa-solid fa-user"></i>
-                <input type="text" class="form-control" placeholder="Felhasználó neve" required="required">
-              </div>
-              <div class="form-group">
-                <i class="fa fa-lock"></i>
-                <input type="password" class="form-control" placeholder="Jelszava" required="required">
-              </div>
-              <div class="form-group">
-                <input type="submit" class="btn btn-block btn-lg" value="Bejelentkezés">
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <p>
-              <a href="#">Elfelejtette a jelszavát?</a>
-            </p>
-            <br>
-            <p>
-              <a href="/regisztracio">Nincs még fiókja?</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+		<div id="myModal" class="modal fade">
+			<div class="modal-dialog modal-login">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Bejelentkezés</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form action="/examples/actions/confirmation.php" method="post">
+							<div class="form-group">
+								<i class="fa-solid fa-user"></i>
+								<input type="text" class="form-control" placeholder="Felhasználó neve" required="required">
+							</div>
+							<div class="form-group">
+								<i class="fa fa-lock"></i>
+								<input type="password" class="form-control" placeholder="Jelszava" required="required">
+							</div>
+							<div class="form-group">
+								<input type="submit" class="btn btn-block btn-lg" value="Bejelentkezés">
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<p>
+							<a href="#">Elfelejtette a jelszavát?</a>
+						</p>
+						<br>
+						<p>
+							<a href="/regisztracio">Nincs még fiókja?</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>

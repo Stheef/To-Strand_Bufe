@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Már 03. 13:22
--- Kiszolgáló verziója: 10.4.25-MariaDB
--- PHP verzió: 8.1.10
+-- Host: 127.0.0.1
+-- Generation Time: Mar 12, 2023 at 04:46 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Adatbázis: `to-strand_bufe`
+-- Database: `to-strand_bufe`
 --
 DROP DATABASE IF EXISTS `to-strand_bufe`;
 CREATE DATABASE IF NOT EXISTS `to-strand_bufe` DEFAULT CHARACTER SET utf8 COLLATE utf8_hungarian_ci;
@@ -26,7 +26,7 @@ USE `to-strand_bufe`;
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `order`
+-- Table structure for table `order`
 --
 
 CREATE TABLE `order` (
@@ -43,7 +43,7 @@ CREATE TABLE `order` (
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `order_items`
+-- Table structure for table `order_items`
 --
 
 CREATE TABLE `order_items` (
@@ -57,7 +57,7 @@ CREATE TABLE `order_items` (
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `payment_method`
+-- Table structure for table `payment_method`
 --
 
 CREATE TABLE `payment_method` (
@@ -66,7 +66,7 @@ CREATE TABLE `payment_method` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
--- A tábla adatainak kiíratása `payment_method`
+-- Dumping data for table `payment_method`
 --
 
 INSERT INTO `payment_method` (`id`, `name`) VALUES
@@ -77,7 +77,7 @@ INSERT INTO `payment_method` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
@@ -91,7 +91,7 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
--- A tábla adatainak kiíratása `products`
+-- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`id`, `category_id`, `type`, `nev`, `description`, `image`, `unit_price`) VALUES
@@ -169,7 +169,7 @@ INSERT INTO `products` (`id`, `category_id`, `type`, `nev`, `description`, `imag
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `product_category`
+-- Table structure for table `product_category`
 --
 
 CREATE TABLE `product_category` (
@@ -179,7 +179,7 @@ CREATE TABLE `product_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
--- A tábla adatainak kiíratása `product_category`
+-- Dumping data for table `product_category`
 --
 
 INSERT INTO `product_category` (`id`, `type`, `catname`) VALUES
@@ -196,7 +196,7 @@ INSERT INTO `product_category` (`id`, `type`, `catname`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `residence`
+-- Table structure for table `residence`
 --
 
 CREATE TABLE `residence` (
@@ -210,7 +210,7 @@ CREATE TABLE `residence` (
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `status`
+-- Table structure for table `status`
 --
 
 CREATE TABLE `status` (
@@ -219,7 +219,7 @@ CREATE TABLE `status` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
--- A tábla adatainak kiíratása `status`
+-- Dumping data for table `status`
 --
 
 INSERT INTO `status` (`id`, `name`) VALUES
@@ -231,7 +231,7 @@ INSERT INTO `status` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `town_name`
+-- Table structure for table `town_name`
 --
 
 CREATE TABLE `town_name` (
@@ -241,7 +241,7 @@ CREATE TABLE `town_name` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
--- A tábla adatainak kiíratása `town_name`
+-- Dumping data for table `town_name`
 --
 
 INSERT INTO `town_name` (`id`, `name`, `postal_code`) VALUES
@@ -257,7 +257,7 @@ INSERT INTO `town_name` (`id`, `name`, `postal_code`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `user_data`
+-- Table structure for table `user_data`
 --
 
 CREATE TABLE `user_data` (
@@ -271,19 +271,22 @@ CREATE TABLE `user_data` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
--- A tábla adatainak kiíratása `user_data`
+-- Dumping data for table `user_data`
 --
 
 INSERT INTO `user_data` (`id`, `residence_id`, `user_name`, `phone_number`, `email`, `password`, `permission`) VALUES
 (1, 0, 'admin', '', '', 'd033e22ae348aeb5660fc2140aec35850c4da997', 0),
-(2, 0, 'mari', '06706521527', 'mari@gmail.com', '5d95cb27f49aafe1eac579adf55ae18deeb49b8c', 1);
+(2, 0, 'mari', '06706521527', 'mari@gmail.com', '5d95cb27f49aafe1eac579adf55ae18deeb49b8c', 1),
+(3, 0, 'Lejonídász', '06206537912', 'lej@gmail.com', 'a7aea4f58f43c69ff05491d3dd910c54b7b20167', 1),
+(4, 0, 'lep', '06206537562', 'lepe@gmail.com', '60b70045a2da90a01c7fcef43c257e96f84e883c', 1),
+(5, 0, 'he', '06205337562', 'hehehe@gmail.com', '213bafb1f83eed432e5e115d25f9eff2b8f33960', 1);
 
 --
--- Indexek a kiírt táblákhoz
+-- Indexes for dumped tables
 --
 
 --
--- A tábla indexei `order`
+-- Indexes for table `order`
 --
 ALTER TABLE `order`
   ADD PRIMARY KEY (`id`),
@@ -294,7 +297,7 @@ ALTER TABLE `order`
   ADD KEY `fizetesi_modszer_FK_idx` (`payment_id`);
 
 --
--- A tábla indexei `order_items`
+-- Indexes for table `order_items`
 --
 ALTER TABLE `order_items`
   ADD PRIMARY KEY (`id`),
@@ -302,26 +305,26 @@ ALTER TABLE `order_items`
   ADD KEY `ter,elel_FK_idx` (`products_id`);
 
 --
--- A tábla indexei `payment_method`
+-- Indexes for table `payment_method`
 --
 ALTER TABLE `payment_method`
   ADD PRIMARY KEY (`id`);
 
 --
--- A tábla indexei `products`
+-- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
   ADD KEY `kategoriak_FK_idx` (`category_id`);
 
 --
--- A tábla indexei `product_category`
+-- Indexes for table `product_category`
 --
 ALTER TABLE `product_category`
   ADD PRIMARY KEY (`id`);
 
 --
--- A tábla indexei `residence`
+-- Indexes for table `residence`
 --
 ALTER TABLE `residence`
   ADD PRIMARY KEY (`id`),
@@ -329,94 +332,95 @@ ALTER TABLE `residence`
   ADD KEY `fiok_adatok_FK_idx` (`user_id`);
 
 --
--- A tábla indexei `status`
+-- Indexes for table `status`
 --
 ALTER TABLE `status`
   ADD PRIMARY KEY (`id`);
 
 --
--- A tábla indexei `town_name`
+-- Indexes for table `town_name`
 --
 ALTER TABLE `town_name`
   ADD PRIMARY KEY (`id`);
 
 --
--- A tábla indexei `user_data`
+-- Indexes for table `user_data`
 --
 ALTER TABLE `user_data`
   ADD PRIMARY KEY (`id`);
 
 --
--- A kiírt táblák AUTO_INCREMENT értéke
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT a táblához `order`
+-- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT a táblához `order_items`
+-- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT a táblához `payment_method`
+-- AUTO_INCREMENT for table `payment_method`
 --
 ALTER TABLE `payment_method`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT a táblához `products`
+-- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
--- AUTO_INCREMENT a táblához `product_category`
+-- AUTO_INCREMENT for table `product_category`
 --
 ALTER TABLE `product_category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT a táblához `residence`
+-- AUTO_INCREMENT for table `residence`
 --
 ALTER TABLE `residence`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT a táblához `status`
+-- AUTO_INCREMENT for table `status`
 --
 ALTER TABLE `status`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT a táblához `town_name`
+-- AUTO_INCREMENT for table `town_name`
 --
 ALTER TABLE `town_name`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT a táblához `user_data`
+-- AUTO_INCREMENT for table `user_data`
 --
 ALTER TABLE `user_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- Megkötések a kiírt táblákhoz
+-- Constraints for dumped tables
 --
 
 --
--- Megkötések a táblához `order`
+-- Constraints for table `order`
 --
 ALTER TABLE `order`
   ADD CONSTRAINT `allapotk_FK` FOREIGN KEY (`status_id`) REFERENCES `status` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fizetesi_modszer_FK` FOREIGN KEY (`payment_id`) REFERENCES `payment_method` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fizetesi_modszer_FK` FOREIGN KEY (`payment_id`) REFERENCES `payment_method` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `order_ibfk_1` FOREIGN KEY (`user_data_id`) REFERENCES `user_data` (`id`);
 
 --
--- Megkötések a táblához `order_items`
+-- Constraints for table `order_items`
 --
 ALTER TABLE `order_items`
   ADD CONSTRAINT `lategoriak_FK` FOREIGN KEY (`products_id`) REFERENCES `product_category` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
@@ -424,7 +428,7 @@ ALTER TABLE `order_items`
   ADD CONSTRAINT `termekek_FK` FOREIGN KEY (`products_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Megkötések a táblához `residence`
+-- Constraints for table `residence`
 --
 ALTER TABLE `residence`
   ADD CONSTRAINT `fiok_adatok_FK` FOREIGN KEY (`user_id`) REFERENCES `user_data` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,

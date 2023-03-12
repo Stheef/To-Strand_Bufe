@@ -8,8 +8,8 @@
 			<div class="text-white text">
 				<h1 class="mb-3">Üdvözöljük, a<span>Tó-Strand Büfénél</span>
 				</h1>
-				<h4 class="mb-3 para">Ismerje meg jobban a Bánki Tó-Strand egyetlen kifőzdéjét, amely a meseszép völgy szívében
-																								helyezkedik el</h4>
+				<h4 class="mb-3 para fw-bold">Ismerje meg jobban a Bánki Tó-Strand egyetlen kifőzdéjét, amely a meseszép völgy szívében
+																													helyezkedik el</h4>
 				<div class="text-center">
 					<a class="btn" href="/rolunk" role="button">Bővebben</a>
 				</div>
@@ -26,8 +26,8 @@
 
 				<div class="content">
 					<h3>
-					<strong>Ismerjen meg</strong>
-					minket jobban
+						<strong>Ismerjen meg</strong>
+						minket jobban
 					</h3>
 					<p>
 						Kifőzdénk Bánkon található, amely kis településként húzódik meg a Cserhát és a Börzsöny lábánál.
@@ -122,8 +122,8 @@
 	</div>
 </section>
 
-<h1 class="title">Büfé legeladottabb termékei:</h1>
 <section class="hero">
+	<h1 class="title">Büfé legeladottabb termékei:</h1>
 	<div class="swiper hero-slider">
 		<div class="swiper-wrapper">
 			<div class="swiper-slide slider">
@@ -169,15 +169,15 @@
 		<div class="container">
 			<div class="row">
 				{% for item in items %}
-					<div class="col-sm-6 col-md-6 col-lg-4">
+					<div class="blokkok col-md-4 ">
 						<div class="food-card">
 							<div class="food-card_img">
-								<img src="https://i.imgur.com/eFWRUuR.jpg" alt="termek_kep">
+								<img src="https://i.imgur.com/eFWRUuR.jpg" alt="{{item.name}}">
 							</div>
-							<div class="food-card_content">
+							<div class="food-card_content" data-category="{{item.name}}">
 								<div class="food-card_title-section">
-									<a href="#!" class="food-card_title">{{item.nev}}</a>
-									<a href="#!" class="food-card_author">{{item.catname}}</a>
+									<h5 class="food-card_title">{{ item.nev }}</h5>
+									<p class="food-card_author">{{ item.catname }}</p>
 								</div>
 								<div class="food-card_bottom-section">
 									<hr>
@@ -187,7 +187,7 @@
 												Ft</span>
 										</div>
 										<div class="">
-											<a href="#!" class="food-card_cart">
+											<a class="food-card_cart">
 												<i class="fa-solid fa-cart-plus"></i>
 											</a>
 										</div>

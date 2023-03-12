@@ -92,3 +92,13 @@ $("#filters :checkbox").click(function () {
     $("." + $(this).val()).show();
   });
 });
+
+
+let cart = document.querySelector('.shopping-cart');
+
+document.querySelector('#cart-btn').onclick = () =>{
+    cart.classList.toggle('active');
+    searchForm.classList.remove('active');
+    loginForm.classList.remove('active');
+    navbar.classList.remove('active');
+}

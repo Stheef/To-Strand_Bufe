@@ -5,6 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Admin belépés</title>
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet"/>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 		<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="App/css/admin_style.css">
@@ -24,6 +25,7 @@
 					<div class="form-floating mb-3 form-group ">
 						<input type="text" class="form-control box" id="floatingInput validationCustom01" name="userName" id="userName" required placeholder="Felhasználónév">
 						<label for="floatingInput validationCustom01">Felhasználónév</label>
+						<div class="invalid-feedback">Please choose a username.</div>
 					</div>
 					<div class="form-floating form-group">
 						<input type="password" class="form-control box" id="floatingPassword" name="password" id="password" required placeholder="Jelszó">
@@ -31,13 +33,33 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<input type="submit" class="btn btn-primary mt-3" name="login" id="login" value="Belépés">
+					<input type="submit" class="btn btn-dark mt-3" name="login" id="login" value="Belépés">
 				</div>
 
 			</form>
 		</section>
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+		<script>
+			// Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+'use strict';
+
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+const forms = document.querySelectorAll('.needs-validation');
+
+// Loop over them and prevent submission
+Array.prototype.slice.call(forms).forEach((form) => {
+form.addEventListener('submit', (event) => {
+if (!form.checkValidity()) {
+event.preventDefault();
+event.stopPropagation();
+}
+form.classList.add('was-validated');
+}, false);
+});
+})();
+		</script>
 	</body>
 
 </html>
