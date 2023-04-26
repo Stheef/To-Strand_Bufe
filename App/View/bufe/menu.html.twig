@@ -1,0 +1,134 @@
+{% include 'header.html.twig' %}
+<div id="menu-hero" class="menu-hero">
+	<div class="menu-hero-bg">
+		<div class="container position-relative">
+			<div class="row gy-5">
+				<div class="col-lg-6  order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start downer" data-aos="zoom-out" data-aos-delay="100">
+					<h2>ÉTLAPUNK</h2>
+					<p>Egyedülálló étlapunk csakis friss alapanyagokból előállított, minőségi ételekkel rendelkezik.
+					</p>
+				</div>
+				<div class="col-lg-6 order-1 order-lg-2 float-menu">
+					<img src="App/assets/images/menu-hero1.png" class="img-fluid " alt="Lebegő kép" data-aos="zoom-out" data-aos-delay="100">
+				</div>
+			</div>
+		</div>
+
+
+		<div class="icon-boxes position-relative">
+			<div class="container position-relative">
+				<div class="row gy-4 mt-5">
+
+					<div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+						<div class="icon-box">
+							<div class="icon">
+								<i class="fa-solid fa-burger"></i>
+							</div>
+							<h4 class="title">
+								<a class="stretched-link">Gyors ételek</a>
+							</h4>
+						</div>
+					</div>
+
+					<div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+						<div class="icon-box">
+							<div class="icon">
+								<i class="fa-solid fa-utensils"></i>
+							</div>
+							<h4 class="title">
+								<a class="stretched-link">Frissen sültek</a>
+							</h4>
+						</div>
+					</div>
+
+					<div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+						<div class="icon-box">
+							<div class="icon">
+								<i class="fa-solid fa-fish"></i>
+							</div>
+							<h4 class="title">
+								<a class="stretched-link">Hekk</a>
+							</h4>
+						</div>
+					</div>
+
+					<div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
+						<div class="icon-box">
+							<div class="icon">
+								<i class="fa-solid fa-martini-glass"></i>
+							</div>
+							<h4 class="title">
+								<a class="stretched-link">Alkoholos italok</a>
+							</h4>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container menu-design">
+	<div class="menu-block-design filter">
+		<input type="search" id="myInput" placeholder="Keresés.." name="search" class="searchbox-input" onkeyup="buttonUp();" required data-aos="fade-up" data-aos-delay="350">
+		<div class="row">
+			<div class="col-lg-3">
+				<div class="filter-container" data-aos="fade-up" data-aos-delay="550">
+					<p class="filter-title">
+						<strong>SZŰRÉS</strong>
+					</p>
+					<form>
+						{% for category in categories %}
+							<label><input type="checkbox" name="{{category.catname}}" value="{{category.catname}}" id="{{category.id}}" class="category-checkbox"/>
+								{{category.catname}}</label><br>
+
+						{% endfor %}
+					</form>
+				</div>
+			</div>
+			<div class="col-lg-8">
+				<div class="row">
+					{% for item in items %}
+						<div class="blokkok col-xl-4 col-lg-6 col-md-6 col-sm-12" data-id="{{item.id}}" data-aos="fade-up" data-aos-delay="650">
+							<a href="/etlap/{{item.id}}" class="food-card-link">
+								<div class="food-card">
+									<div class="food-card_img">
+										{% if item.image != "" %}
+											<img src="App/assets/product_images/{{item.image}}" alt="Termék képe"/>
+										{% else %}
+											<img src="App/assets/images/no_image.png" alt="Termék képe"/>
+										{% endif %}
+									</div>
+									<div class="food-card_content" data-category="{{item.name}}">
+										<div class="food-card_title-section">
+											<h5 class="food-card_title">{{ item.name }}</h5>
+											<p class="food-card_author">{{ item.catname }}</p>
+										</div>
+										<div class="food-card_bottom-section">
+											<hr>
+											<div class="space-between">
+												<div class="food-card_price fw-bold">
+													<span>{{item.unit_price}}
+														Ft</span>
+												</div>
+												<a class="food-card_cart">
+													<i class="fa-solid fa-cart-plus"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					{% endfor %}
+				</div>
+				<div class="text-center load-more-container" data-aos="zoom-out" data-aos-delay="150">
+					<button id="loadMoreButton" class="load-more-btn">További elemek megjelenítése</button>
+					<p id="no-results-msg" style="display: none; font-size: 20px; font-weight:bold; justify-content: center; text-align: center; margin-top: 10rem;">Nem található ilyen termék.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% include 'footer.html.twig' %}

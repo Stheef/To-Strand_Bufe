@@ -1,0 +1,229 @@
+{% include 'header.html.twig' %}
+<main>
+	<div class="bg-img">
+		<img class="animate__animated animate__fadeIn" src="App/assets/images/to.png" alt="Borítókép">
+	</div>
+	<div class="mask">
+		<div class="d-flex justify-content-center align-items-center h-100">
+			<div class="text-white text">
+				<h1 class="mb-3 animate__animated animate__fadeInDown animate__delay-1s">Üdvözöljük a<span>Tó-Strand Büfénél</span>
+				</h1>
+				<h4 class="mb-3 para animate__animated animate__fadeInUp animate__delay-1s">Ismerje meg jobban a Bánki Tó-Strand egyetlen kifőzdéjét, amely a meseszép
+					völgy szívében
+					helyezkedik el</h4>
+				<div class="text-center animate__animated animate__fadeInUp animate__delay-1s">
+					<a class="btn btn-dark" href="/rolunk" role="button">Bővebben</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+
+<section id="aboutus" class="aboutus">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-5 align-items-stretch image-box" data-aos="fade-up" data-aos-delay="150"></div>
+			<div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">
+
+				<div class="content">
+					<h3 data-aos="fade-up" data-aos-delay="300">
+						<strong>Ismerjen meg</strong>
+						minket jobban
+					</h3>
+					<div data-aos="fade-up" data-aos-delay="800">
+						<p>
+							Kifőzdénk Bánkon található, amely kis településként húzódik meg a Cserhát és a Börzsöny
+							lábánál.
+						</p>
+						<p class="fst-italic">
+							Nógrád megye állóvizekben meglehetősen szegény, ezért is nevezetes a "tengerszeméről"
+							elnevezett, festői környezetű, erdőségekkel határolt Bánki-tó.
+						</p>
+						<ul>
+							<li>
+								<i class="bi bi-check-circle"></i>
+								A Bánki Tó-Strand Nógrád megye egyik ha nem a legkedveltebb strandja.
+							</li>
+							<li>
+								<i class="bi bi-check-circle"></i>
+								A Tó-színpad minden nyáron számtalan programmal várja az ide érkezőket.
+							</li>
+							<li>
+								<i class="bi bi-check-circle"></i>
+								Nógrád megye egyik legnagyobb horgász-paradicsomának számít a tavunk, mely mint a
+								stégeken,
+								mint a tavon csónakkal is megfelelő kikapcsolódás lehet a pecázni vágyóknak.
+							</li>
+						</ul>
+						<p>
+							A tó jelenlegi adatai: átlagos mélység: 3,94 m; legmélyebb pontja: 5,99 m; a tó felülete: 7
+							ha
+							8730 m2; vízmennyiség: 325.656 m3, üzemvízszint: 169,89 m B.f.
+						</p>
+						<p>
+							Gyönyörű tavunk minden nyáron rengeteg embert vonz a strandjára, melynek egyetlen büféje a
+							miénk, így ha nyáron a Bánki Tó-Strandon jár, ne habozzon betérni hozzánk.
+						</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</section>
+
+
+<section class="bg-service bg-section" id="service">
+	<div class="container-fluid text-center">
+		<div data-aos="fade-up" data-aos-delay="150">
+			<h1 class="container-h1">Miért válasszon minket?</h1>
+			<hr class="hr-h3s">
+		</div>
+		<div class="row service-round-3" data-aos="fade-up" data-aos-delay="300">
+			<div class="col-lg-4 col-md-4 text-center round">
+				<div class="service-round b-party">
+					<i class="fa fa-4x fa fa-burger sr-icons"></i>
+				</div>
+				<h4 class="fw-bold">Minőségi gyors-ételek</h4>
+				<p>Csakis minőségi és friss alapanyagokkal dolgozunk</p>
+			</div>
+			<div class="col-lg-4 col-md-4 text-center round">
+				<div class="service-round wedding">
+					<i class="fa fa-4x fa fa-car sr-icons"></i>
+				</div>
+				<h4 class="fw-bold">Gyors házhozszállítás</h4>
+				<p>Bánk környékén villámgyors házhozszállítást biztósítunk</p>
+			</div>
+			<div class="col-lg-4 col-md-4 text-center round">
+				<div class="service-round b-dinner">
+					<i class="fa fa-4x fa fa-umbrella-beach sr-icons"></i>
+				</div>
+				<h4 class="fw-bold">Közvetlen strand</h4>
+				<p>A Bánki Tó-Strand közvetlen szívében található kifőzdénk</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section id="stats-counter" class="stats-counter">
+	<div class="container" data-aos="zoom-out" data-aos-delay="450">
+		<div class="row gy-4">
+			<div class="col-lg-4 col-md-4">
+				<div class="stats-item text-center w-100 h-100">
+					<span data-purecounter-start="0" data-purecounter-end="{{productCount|default(0)}}" data-purecounter-duration="1.5"
+						class="purecounter"></span>
+					<p>Termékek száma</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-4">
+				<div class="stats-item text-center w-100 h-100">
+					<span data-purecounter-start="0" data-purecounter-end="{{orderCount|default(0)}}" data-purecounter-duration="1.5"
+						class="purecounter"></span>
+					<p>Rendelések száma</p>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-4">
+				<div class="stats-item text-center w-100 h-100">
+					<span data-purecounter-start="0" data-purecounter-end="{{userCount|default(0)}}" data-purecounter-duration="1.5"
+						class="purecounter"></span>
+					<p>Felhasználóink száma</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="hero-flip">
+	<div data-aos="fade-up" data-aos-delay="150">
+		<h1 class="title">Büfénk legeladottabb termékei:</h1>
+		<hr class="hr-h3s">
+	</div>
+	<div class="swiper hero-slider" data-aos="fade-up" data-aos-delay="300">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide slider">
+				<div class="content">
+					<span>Rendeljen online most</span>
+					<h3>Gyros</h3>
+					<a href="/etlap/43" class="mainbtn">Megtekintem</a>
+				</div>
+				<div class="image">
+					<img src="/App/assets/images/gyros_plate.png" alt="Gyros tál">
+				</div>
+			</div>
+
+			<div class="swiper-slide slider">
+				<div class="content">
+					<span>Rendeljen online most</span>
+					<h3>Hekk</h3>
+					<a href="/etlap/44" class="mainbtn">Megtekintem</a>
+				</div>
+				<div class="image">
+					<img src="/App/assets/images/sult_hekk.png" alt="Sült hekk">
+				</div>
+			</div>
+
+			<div class="swiper-slide slider">
+				<div class="content">
+					<span>Rendeljen online most</span>
+					<h3>Sajtos tejfölös lángos</h3>
+					<a href="/etlap/36" class="mainbtn">Megtekintem</a>
+				</div>
+				<div class="image">
+					<img src="/App/assets/images/langos.png" alt="Sajtos-tejfölös lángos">
+				</div>
+			</div>
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+</section>
+
+
+<section id="events" class="events">
+	<div class="container">
+		<div class="section-title" data-aos="fade-up" data-aos-delay="150">
+			<h2>Ismerje meg jobban a <span>Bánki Nyár</span> programjait</h2>
+		</div>
+		<div class="row event-item">
+			<div class="col-lg-6 bg-image hover-overlay hover-zoom" data-aos="fade-up" data-aos-delay="350">
+				<img src="App/assets/images/banki-nyar2.jpg" class="img-fluid" alt="Bánki nyár">
+			</div>
+			<div class="col-lg-6 pt-4 pt-lg-0 content">
+				<h3 data-aos="fade-up" data-aos-delay="400">Bánkitó fesztivál</h3>
+				<p data-aos="fade-up" data-aos-delay="500">
+					Immáron lassan 30 éve a nyár folyamán gondosan tervezett rendezvénysorozattal várják a Bánkon
+					pihenő, üdülő vendégeket.
+				</p>
+				<ul>
+					<li data-aos="fade-up" data-aos-delay="1000"><i class="bi bi-check-circle"></i> <span
+							data-purecounter-start="0" data-purecounter-end="37" data-purecounter-duration="2.5"
+							class="purecounter"></span>
+						fellépő </li>
+					<li data-aos="fade-up" data-aos-delay="2000"><i class="bi bi-check-circle"></i> Bánki-tó partján
+					</li>
+					<li data-aos="fade-up" data-aos-delay="3000"><i class="bi bi-check-circle"></i> Garantált élmény
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="map">
+	<h1 class="title" data-aos="fade-up" data-aos-delay="150">Felkeltettük érdeklődését?</h1>
+	<div data-aos="fade-up" data-aos-delay="250">
+		<h2>Térjen be még ma hozzánk!</h2>
+		<hr class="hr-h3s">
+	</div>
+	<div class="map" data-aos="fade-up" data-aos-delay="300">
+		<iframe style="border:0; width: 100%; height: 350px;"
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1336.841545718801!2d19.17488761246205!3d47.92316908953468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476a9d43bfc7262d%3A0x828c5ae2d95eb2f4!2zQsOhbmtpIHTDsyBzdHJhbmQ!5e0!3m2!1shu!2shu!4v1674120019384!5m2!1shu!2shu"
+			frameborder="0" allowfullscreen></iframe>
+	</div>
+</section>
+
+{% include 'footer.html.twig' %}

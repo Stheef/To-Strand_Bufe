@@ -1,0 +1,35 @@
+{% include 'bufe/admin/admin_header.html.twig' %}
+<title>Admin felhasználók</title>
+<div class="container-fluid">
+	<div id="alert-container"></div>
+	<div class="card shadow mb-4">
+		<div class="card-body">
+			<div class="table-responsive">
+				<table class="table table-bordered" id="dataTableUser" width="100%" cellspacing="0">
+					<thead>
+						<tr>
+							<th>Felhasználó név</th>
+							<th>Email cím</th>
+							<th>Telefonszáma</th>
+							<th>Rendelések száma</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for user in users %}
+							<tr id="felhasznaloid_{{user.id}}">
+								<td>
+									<p class="unset fw-bold">{{user.user_name}}</p>
+								</td>
+								<td>{{user.email}}</td>
+								<td>{{user.phone_number}}</td>
+								<td>{{ user.order_count }} db</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% include 'bufe/admin/admin_footer.html.twig' %}

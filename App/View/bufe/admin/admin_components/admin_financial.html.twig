@@ -1,0 +1,147 @@
+{% include 'bufe/admin/admin_header.html.twig' %}
+<title>Admin pénzügyek</title>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xl-3 col-md-6 mb-4">
+			<div class="card border-left-success shadow h-100 py-2">
+				<div class="card-body">
+					<div class="row no-gutters align-items-center">
+						<div class="col mr-2">
+							<div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+								Kereset (Napi)</div>
+							<div class="h5 mb-0 font-weight-bold text-gray-800">{{dailyEarnings|default(0)}}
+								Ft</div>
+						</div>
+						<div class="col-auto">
+							<i class="fa-solid fa-calendar-day fa-2x text-gray-300"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xl-3 col-md-6 mb-4">
+			<div class="card border-left-success shadow h-100 py-2">
+				<div class="card-body">
+					<div class="row no-gutters align-items-center">
+						<div class="col mr-2">
+							<div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+								Kereset (Heti)</div>
+							<div class="h5 mb-0 font-weight-bold text-gray-800">{{weeklyEarnings|default(0)}}
+								Ft</div>
+						</div>
+						<div class="col-auto">
+							<i class="fa-solid fa-calendar-week fa-2x text-gray-300"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xl-3 col-md-6 mb-4">
+			<div class="card border-left-success shadow h-100 py-2">
+				<div class="card-body">
+					<div class="row no-gutters align-items-center">
+						<div class="col mr-2">
+							<div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+								Kereset (Havi)</div>
+							<div class="h5 mb-0 font-weight-bold text-gray-800">{{monthlyEarnings|default(0)}}
+								Ft</div>
+						</div>
+						<div class="col-auto">
+							<i class="fa-solid fa-calendar-days fa-2x text-gray-300"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xl-3 col-md-6 mb-4">
+			<div class="card border-left-success shadow h-100 py-2">
+				<div class="card-body">
+					<div class="row no-gutters align-items-center">
+						<div class="col mr-2">
+							<div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+								Kereset (Évi)</div>
+							<div class="h5 mb-0 font-weight-bold text-gray-800">{{yearlyEarnings|default(0)}}
+								Ft</div>
+						</div>
+						<div class="col-auto">
+							<i class="fa-solid fa-calendar fa-2x text-gray-300"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+
+		<div class="col-xl-8 col-lg-7">
+			<div class="card shadow mb-4">
+				<div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-white">Évi kereset áttekintése:</h6>
+				</div>
+				<div class="card-body">
+					<div class="chart-area">
+						<canvas id="myAreaChart"></canvas>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="card shadow mb-4">
+				<div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-white">Heti kereset:</h6>
+				</div>
+				<div class="card-body">
+					<div class="chart-bar">
+						<canvas id="myBarChart"></canvas>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="col-xl-4 col-lg-5">
+			<div class="card shadow mb-4">
+				<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+					<h6 class="m-0 font-weight-bold text-white">Júniusi kereset :</h6>
+				</div>
+				<div class="card-body">
+					<div class="chart-pie pt-4 pb-2">
+						<canvas id="myPieChartJune"></canvas>
+					</div>
+					<div class="mt-4 text-center small">
+						<span class="mr-2">
+							<i class="fas fa-circle het1"></i>
+							1. hét
+						</span>
+						<span class="mr-2">
+							<i class="fas fa-circle het2"></i>
+							2. hét
+						</span>
+						<span class="mr-2">
+							<i class="fas fa-circle het3"></i>
+							3. hét
+						</span>
+						<span class="mr-2">
+							<i class="fas fa-circle het4"></i>
+							4. hét
+						</span>
+						<span class="mr-2">
+							<i class="fas fa-circle het5"></i>
+							5. hét
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	var weeklyEarningChartData = {{ weeklyEarningChartData|json_encode|raw }};
+var yearlyEarningChartData = {{ yearlyEarningChartData|json_encode|raw }};
+var weeklyEarningsJune = {{ weeklyEarningsJune|json_encode|raw }};
+</script>
+
+{% include 'bufe/admin/admin_footer.html.twig' %}

@@ -1,0 +1,138 @@
+{% include 'bufe/admin/admin_header.html.twig' %}
+<title>Admin termékek</title>
+<div class="container-fluid">
+<div id="alert-container"></div>
+	<a class='btn add-button mb-2' onclick="termekSzerkesztModal(0)">
+		<i class="fa-solid fa-circle-plus"></i>
+		Új termék</a>
+	<div class="card shadow mb-4">
+		<div class="card-body">
+			<div class="table-responsive">
+				<table class="table table-bordered" id="dataTableProduct" width="100%" cellspacing="0">
+					<thead>
+						<tr>
+							<th>Kép</th>
+							<th>Megnevezés</th>
+							<th>Típus</th>
+							<th>Kategória</th>
+							<th>Leírás</th>
+							<th>Egységár</th>
+							<th>Műveletek</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for product in products %}
+							<tr id="termekid_{{product.id}}">
+								<td>
+								{% if product.image != "" %}
+									<img src="App/assets/product_images/{{product.image}}" alt="Termék képe" class="rounded-circle"/>
+									{% else %}
+									<img src="App/assets/images/no_image.png" alt="Termék képe" class="rounded-circle"/>
+								{% endif %}
+								</td>
+								</td>
+								<td>{{product.name}}</td>
+								<td id="{{product.type}}">{{product.type ? 'Étel' : 'Ital'}}</td>
+								<td id="{{product.category_id}}">{{product.catname}}</td>
+								<td>{{product.description}}</td>
+								<td id="{{product.unit_price}}">{{product.unit_price}} Ft</td>
+								<td>
+									<a class='btn btn-warning' onclick="termekSzerkesztModal({{product.id}})">
+										<i class="fa-solid fa-edit"></i>
+										Módosít</a>
+									<a class='btn btn-danger' onclick="termekTorolModal({{product.id}})">
+										<i class="fa-solid fa-trash"></i>
+										Töröl</a>
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="productDataModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title" id="termek_cim">???</h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+			<div class="modal-body">
+				<form method="POST" id="product_form" enctype="multipart/form-data" onsubmit="return termekMentes()">
+				    <input type="hidden" name="id" id="termek_id" value="">
+					<div class="form-group">
+						<label for="formFile" class="form-label" id="kep_feltoltese">Kép feltöltése</label>
+						<div id="kep_feltoltott" style="display: none;"></div>
+						<input class="form-control" type="file" name="kep" id="formFile" accept="image/png, image/jpeg" >
+					</div>
+					<div class="form-group">
+						<label for="name">Név*</label>
+						<input class="form-control" type="text" name="name" id="termek_nev" required>
+					</div>
+					<div class="form-group">
+						<label for="itemType">Termék típus*</label>
+						<select class="form-select" id="itemType" onchange="termekTipusFrissit()" required>
+							<option value="" disabled selected>Válasszon típust</option>
+							<option value="1">Étel</option>
+							<option value="0">Ital</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="itemCategory">Termék kategória*</label>
+						<select class="form-select" name="category_id" id="itemCategory" required>
+							<option value="" id="-1" disabled selected>Válasszon termék kategóriát</option>
+							{% for category in productCategories %}
+								<option class="kategoriak c_{{category.type}} nemlatszik" value="{{category.id}}">{{category.catname}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="description">Leírás</label>
+						<textarea class="form-control" type="text" name="description" id="leiras" rows="3"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="price">Egységár</label>
+						<input class="form-control" type="number" name="unit_price" id="ar" min="1" required>
+					</div>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">
+						<i class="fa-solid fa-xmark"></i>
+						Mégse</button>
+					<button type="submit" class="btn btn-success float-right" name="btnOK">
+						<i class="fa-solid fa-floppy-disk"></i>
+						Mentés</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="deleteModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<form method="POST" id="delete_form">
+				    <input type="hidden" name="id" id="delete_termek_id" value="">
+					<div class="text-center">
+						<i class="fa-regular fa-circle-xmark rcross"></i>
+						<p>Biztosan törölni szeretné a(z)
+							<span id="termek_torol"></span>
+							nevű terméket?</p>
+					</div>
+					<button type="button" class="btn btn-warning float-left" data-dismiss="modal">
+						<i class="fa-solid fa-arrow-left"></i>
+						Mégse</button>
+					<button type="button" class="btn btn-danger float-right" name="btnOK" onclick="termekTorles()">
+						<i class="fa-solid fa-xmark"></i>
+						Törlés</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% include 'bufe/admin/admin_footer.html.twig' %}

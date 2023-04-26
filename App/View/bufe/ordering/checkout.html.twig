@@ -1,0 +1,114 @@
+{% include 'header.html.twig' %}
+<section class="checkout">
+	<div class="container py-5">
+		<div class="row d-flex justify-content-center my-4">
+			<div class="col-md-12">
+				<div class="card mb-4">
+					<div class="card-header py-3">
+						<h1 class="mb-0">Pénztár</h1>
+					</div>
+					<div class="card mb-4">
+						<div class="card-header py-3 summary">
+							<h5 class="mt-4 mb-4">Összegzés</h5>
+						</div>
+						<form action="/checkout-save" method="POST" id="frm-order">
+							<input type="hidden" name="user_id" value="{{user_id}}">
+							<input type="hidden" name="order_items" id="order_items" value="">
+							<input type="hidden" name="town_id" id="town_id" value="">
+
+							<div class="card-body">
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item border-0 px-0 pb-0">
+										<div class="row">
+											<p class="col-sm-12 col-md-2 fw-bold">Termékek:</p>
+											<span class="col-sm-12 col-md-10"></span>
+										</div>
+									</li>
+
+									<li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+										<p class="fw-bold">Termékek ára</p>
+										<span id="productsPrice">0 Ft</span>
+									</li>
+									<li class="list-group-item d-flex justify-content-between align-items-center px-0">
+										<p class="fw-bold">Kiszállítási díj</p>
+										<span class="delivery-fee">0 Ft</span>
+									</li>
+									<li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+										<div>
+											<strong>Összesen:</strong>
+										</div>
+										<span id="totalPrice">
+											<strong>0 Ft</strong>
+										</span>
+										<input type="hidden" name="amount" id="amount">
+									</li>
+									<li class="list-group-item d-flex justify-content-between align-items-center px-0">
+										<div class="form-group col-lg-4 col-md-5 paymentMethod">
+											<label class="fw-bold" for="payment_method_id">Fizetési módszer:</label>
+											<select class="form-select fs-4" name="payment_method_id" required>
+											<option selected disabled>Válasszon fizetési módszert </option>
+												{% for payment in paymentName %}
+													<option value="{{payment.id}}">
+														{{payment.name}}
+													</option>
+												{% endfor %}
+											</select>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="card-body">
+							<input type="hidden" id="townData" value="{{ townData|json_encode|escape('html_attr') }}">
+							<div class="row g-2">
+								<div class="form-group col-md-6">
+									<label class="fs-3 fw-bold" for="town_name">Város:</label>
+									<select class="form-select fs-4" name="town_name" id="town_name" required>
+										<option disabled selected>Válasszon várost</option>
+										{% for town in townData %}
+											<option value="{{town.name}}">
+												{{town.name}}
+											</option>
+										{% endfor %}
+									</select>
+									<div class="invalid-feedback">
+										Kérjük, válasszon várost.
+									</div>
+								</div>
+								<div class="form-group col-lg-2 col-md-3">
+									<label class="fs-3 fw-bold" for="postalCode">Irányítószám:</label>
+									<input type="number" class="form-control fs-4" id="postalCode" name="postalCode" value="" disabled>
+								</div>
+							</div>
+							<div class="row g-2">
+								<div class="form-group col-lg-6 col-md-12">
+									<label class="fs-3 fw-bold" for="address">Szállítási cím:</label>
+									<div class="input-group has-validation"></div>
+									<input type="text" class="form-control fs-4" id="address" name="address" placeholder="Pl.: Petőfi út 61." required>
+									<div class="invalid-feedback">
+										Kérjük, adja meg a szállítási címet.
+									</div>
+								</div>
+								<div class="form-group col-lg-6 col-md-12">
+									<label for="address_comment" class="fs-3 fw-bold">Szállítási címmel kapcsolatos megjegyzés: <span class="fs-5 fw-normal">(opcionális)</span></label>
+									<textarea class="form-control fs-4" id="address_comment" name="address_comment" rows="3" maxlength="250" placeholder="Pl.: Barna szinű ház (max. 250 karakter hosszúságú)"></textarea>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="comment" class="fs-3 fw-bold">Megjegyzés:</label>
+								<textarea class="form-control fs-4" id="comment" name="comment" rows="4" maxlength="500" placeholder="Pl.: Szeretnék mellé kérni szalvétát (max. 500 karakter hosszúságú)"></textarea>
+							</div>
+							<hr class="my-5">
+							<div class="text-center mt-5 mb-3">
+								<button type="button" class="btn btn-success fs-3" id="order-button" name="save" onclick="order(event)">Megrendelem</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+{% include 'footer_wo_context.html.twig' %}

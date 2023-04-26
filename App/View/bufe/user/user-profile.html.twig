@@ -1,0 +1,128 @@
+{% include 'header.html.twig' %}
+<div class="profile-body">
+	<div class="profile-page">
+		<h2>Üdvözöljük, kedves
+			{{ user.user_name }}!
+		</h2>
+		<div class="profile-container">
+			<h2>Adatok</h2>
+
+			<a href="/kijelentkezes" class="logout-btn">Kijelentkezés</a>
+
+			<p>Adatai közül telefonszámát, és jelszavát bármikor módosíthatja, elérhetősége biztosításának érdekében.</p>
+			<p class="pass-alert">
+				Esetleges jelszó változtatásnál, kérem vegye figyelembe hogy 8 és 20 karakter közötti jelszava kell hogy legyen!
+				{% if success is not null %}
+					{% if success == true %}
+						<div class="alert-success profile-success-message">
+							Adatai sikeresen frissültek.
+						</div>
+					{% elseif success == false %}
+						<div class="alert-danger profile-error-message">
+							Adatainak frissítése sikertelen. Kérjük, próbálja újra.
+						</div>
+					{% endif %}
+				{% endif %}
+			</p>
+
+
+			<form id="profile-form" method="POST" action="/profil/{{ user.id }}">
+				<div class="form-group">
+					<label for="username" class="profil-datas">Felhasználónév:</label>
+					<input type="text" id="username" name="username" class="profil-change" value="{{ user.user_name }}" readonly>
+				</div>
+				<div class="form-group">
+					<label for="email" class="profil-datas">Email:</label>
+					<input type="email" id="email" name="email" class="profil-change" value="{{ user.email }}" readonly>
+				</div>
+				<div class="form-group">
+					<label for="phone_number" class="profil-datas">Telefonszám:</label>
+					<input type="tel" id="phone_number" name="phone_number" pattern="((?:\+?3|0)6)(?:-|\()?(\d{1,2})(?:-|\))?(\d{3})-?(\d{3,4})" class="profil-change" value="{{ user.phone_number }}" maxlength="12">
+				</div>
+				<div class="form-group">
+					<label for="old_password" class="profil-datas">Régi jelszó:</label>
+					<div class="input-field">
+						<input type="password" id="old_password" name="old_password" class="profil-change">
+						<div class="eye-icon-wrapper">
+							<i class="bx bx-hide show-hide"></i>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="new_password" class="profil-datas">Új jelszó:</label>
+					<div class="input-field">
+						<input type="password" id="new_password" name="new_password" class="profil-change">
+						<div class="eye-icon-wrapper">
+							<i class="bx bx-hide show-hide"></i>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="confirm_password" class="profil-datas">Új jelszó megerősítése:</label>
+					<div class="input-field">
+						<input type="password" id="confirm_password" name="confirm_password" class="profil-change">
+						<div class="eye-icon-wrapper">
+							<i class="bx bx-hide show-hide"></i>
+						</div>
+					</div>
+				</div>
+				<button type="submit" class="change-btn">Adatok mentése</button>
+			</form>
+			<div class="orders-container">
+				<h2>Előző rendelések</h2>
+				<div class="table-responsive">
+					<table class="table table-bordered" id="dataTableUsersOrder" width="100%" cellspacing="0">
+						<thead class="thead-dark">
+							<tr>
+								<th scope="col">Rendelés azonosító</th>
+								<th scope="col">Szállítási cím</th>
+								<th scope="col">Fizetési mód</th>
+								<th scope="col">Dátum</th>
+								<th scope="col">Megjegyzés</th>
+								<th scope="col">Végösszeg</th>
+								<th scope="col">Rendelés állapota</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for order in orders %}
+								<tr>
+									<td>{{ order.id }}</td>
+									<td>{{ order.address }}</td>
+									<td>{{ order.payment_method }}</td>
+									<td width="10%">{{ order.time }}</td>
+									<td>{{ order.comment }}</td>
+									<td>{{ order.amount }}
+										Ft</td>
+									<td>{{ order.order_status}}</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="footer-spacing"></div>
+    </div>
+</div>
+
+<style>
+.swal2-popup {
+  width: 450px;
+  height: 300px;
+}
+
+.swal2-title {
+  font-size: 2.7rem;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.swal2-icon {
+  font-size: 2.5rem;
+  width: 9rem;
+  height: 9rem;
+  border-width: .25em !important;
+}
+</style>
+
+{% include 'footer_wo_context.html.twig' %} 

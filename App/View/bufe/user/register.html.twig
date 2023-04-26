@@ -1,0 +1,76 @@
+{% include 'header.html.twig' %}
+<div class="register-body">
+	<div class="register-page">
+		<div class="register-form-container">
+			<h2 class="register-form-title">Regisztráció</h2>
+			<form method="POST" action="/regisztracio" id="registration-form" class="register-form">
+				{% if error_message %}
+					<div class="login-error-message">{{ error_message }}</div>
+				{% endif %}
+				<div class="reg-form-group">
+					<label for="username">Felhasználó név:</label>
+					<input type="text" class="reg-form-control" name="user_name" id="username" placeholder="Felhasználó neve" required="required">
+				</div>
+				<div class="reg-form-group">
+					<label for="phone_number">Telefonszám:</label>
+					<input type="tel" class="reg-form-control" name="phone_number" id="phone_number" placeholder="+36701234567" required="required" pattern="((?:\+?3|0)6)(?:-|\()?(\d{1,2})(?:-|\))?(\d{3})-?(\d{3,4})" maxlength="12">
+				</div>
+				<div class="reg-form-group">
+					<label for="email">Email cím:</label>
+					<input type="email" class="reg-form-control" name="email" id="email" placeholder="Email címe" required="required">
+				</div>
+				<div class="reg-form-group">
+					<div class="input-field">
+						<label for="password">Jelszó:</label>
+						<input type="password" class="reg-form-control" name="password" id="password" placeholder="Jelszava" required="required">
+						<div class="eye-icon-wrapper">
+							<i class="bx bx-hide show-hide"></i>
+						</div>
+						<span class="error-message" id="password-error"></span>
+					</div>
+				</div>
+				<div class="reg-form-group">
+					<div class="input-field">
+						<label for="confirm_password">Jelszó megerősítése:</label>
+						<input type="password" class="reg-form-control" name="password2" id="password2" placeholder="Jelszó megerősítése" required="required">
+						<div class="eye-icon-wrapper">
+							<i class="bx bx-hide show-hide"></i>
+						</div>
+						<span class="error-message" id="password2-error"></span>
+					</div>
+				</div>
+				<div class="reg-form-group text-center">
+					<input type="submit" class="reg-button" name="register" id="register-button" value="Regisztráció">
+				</div>
+				<div class="login-form-group login-reg text-center">
+					<p>Rendelkezik már fiókkal?
+						<a href="/belepes">Bejelentkezés</a>
+					</p>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="footer-spacing"></div>
+</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+    const registrationForm = document.getElementById('registration-form');
+    const password = document.getElementById('password');
+    const confirmPassword = document.getElementById('password2');
+    const passwordError = document.getElementById('password-error');
+    const confirmPasswordError = document.getElementById('password2-error');
+
+    registrationForm.addEventListener('submit', function (event) {
+    passwordError.textContent = '';
+    confirmPasswordError.textContent = '';
+
+      if (password.value !== confirmPassword.value) {
+      passwordError.textContent = '';
+      confirmPasswordError.textContent = 'A két jelszó nem egyezik. Kérem próbálja újra!';
+      event.preventDefault();
+      }
+    });
+  });
+</script>
+
+{% include 'footer_wo_context.html.twig' %}

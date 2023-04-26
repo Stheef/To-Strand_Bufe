@@ -1,0 +1,13 @@
+{% include 'header.html.twig' %}
+<div class="after-order-page">
+	<div class="after-order-container">
+        <div class="text-center"><img class="successful_order_img" src="/App/assets/images/success_mark.png" alt="Sikeres megjelölés"></div>
+		<h3 class="after-order-title">Köszönjük a rendelését!</h3>
+		<div class="text-center">
+			<h4>Hamarosan megkapja az email címére a rendelésével kapcsolatos információkat!</h4>
+			<h5>A <a href="/profil/{{ session.user_id }}">fiókján</a> tudja megnézni és követni a rendelés állapotát.</h5>
+            <h6><a href="/etlap">Vásárlás folytatása</a></h6>
+		</div>
+	</div>
+</div>
+{% include 'footer_wo_context.html.twig' %}

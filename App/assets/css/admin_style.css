@@ -1,0 +1,327 @@
+:root {
+  --main-color: #a8917d;
+  --second-color: #a18167;
+  --orange: #f39c12;
+  --black: #34495e;
+  --white: #fff;
+  --light-bg: #f5f5f5;
+  --light-color: #999;
+  --border: 0.15rem solid #e9d3c0;
+  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+*::selection {
+  color: var(--white);
+  background-color: var(--main-color);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+}
+
+body {
+  background-color: var(--light-bg);
+}
+
+
+/****************** Bejelentkezés ******************/
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.form-container form {
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  text-align: center;
+  width: 50rem;
+}
+
+.form-container form h3 {
+  font-size: 2.5rem;
+  color: var(--black);
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+.form-container form p {
+  margin: 1rem 0;
+  font-size: 20px;
+  color: var(--light-color);
+}
+
+.form-container form p span {
+  color: var(--second-color);
+}
+
+.form-container .form-control {
+  width: 80%;
+}
+
+.center {
+  margin-left: 17%;
+}
+
+.wrapper form .field {
+  height: 50px;
+  width: 100%;
+  margin-top: 30px;
+  position: relative;
+}
+.wrapper form .field input {
+  height: 100%;
+  width: 82%;
+  outline: none;
+  font-size: 17px;
+  padding-left: 20px;
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.wrapper form .field input:focus,
+form .field .input-group input:valid {
+  border-color: var(--second-color);
+}
+
+.wrapper form .field label {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  color: #999999;
+  font-weight: 400;
+  font-size: 17px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+form .field input:focus ~ label,
+form .field input:valid ~ label {
+  top: 0%;
+  font-size: 16px;
+  color: var(--second-color);
+  background: #fff;
+  border-radius: 15px;
+  transform: translateY(-50%);
+}
+
+.form-container .form-control:focus {
+  border: 2px solid var(--main-color);
+  box-shadow: 0 0 10px var(--main-color);
+}
+
+.input-field .form-control {
+  padding-right: 40px;
+}
+
+.eye-icon-wrapper {
+  position: absolute;
+  top: 50%;
+  right: 25%;
+  transform: translateY(-50%);
+}
+
+.input-field .show-hide {
+  font-size: 18px;
+  color: #919191;
+  cursor: pointer;
+  padding: 3px;
+}
+
+@media (max-width: 580px) {
+  .eye-icon-wrapper {
+    position: absolute;
+    top: 50%;
+    right: 30%;
+    transform: translateY(-50%);
+  }
+}
+@media (max-width: 415px) {
+  .invalid-feedback {
+    font-size: 12px;
+  }
+}
+
+.input-field .invalid-feedback {
+  margin-top: -15px;
+  text-align: left;
+}
+
+.form-group button {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+  width: 125px;
+  font-size: 18px;
+  margin-top: 30px !important;
+}
+.form-group button:hover {
+  background-color: var(--second-color);
+  border-color: var(--second-color);
+}
+
+
+/****************** Sidebar ******************/
+.bg-color {
+  background: linear-gradient(to bottom, #a18167 0%, #4d3d30 100%);
+}
+
+.table-color {
+  background: linear-gradient(to bottom right, #a18167 0%, #4d3d30 100%);
+}
+
+.fa-user-gear {
+  color: black;
+}
+
+#sidebarToggleTop {
+  color: var(--main-color);
+}
+
+
+/****************** CRUD ******************/
+.add-button {
+  background-color: var(--second-color);
+  color: white;
+}
+
+.add-button:hover {
+  background-color: #b6977e;
+  color: white;
+}
+
+.exit-btn {
+  color: red;
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+
+.latszik {
+  display: flex;
+}
+.nemlatszik {
+  display: none;
+}
+
+.sidebar-brand-icon img {
+  width: 50px;
+  height: 50px;
+}
+
+.error-message {
+  margin-top: 20px;
+  font-weight: bold;
+  margin-bottom: -20px;
+}
+
+#kep_feltoltott {
+  display: flex;
+  justify-content: center;
+}
+#kep_feltoltott img {
+  width: 150px;
+  height: 150px;
+  margin: 20px 0px;
+}
+
+.table-responsive img {
+  width: 65px;
+  height: 65px;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+#adminDataModal .modal-body .show-hide {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #919191;
+  cursor: pointer;
+  padding: 3px;
+}
+
+.unset {
+  all: unset;
+}
+
+.table-responsive .table caption {
+  caption-side: top;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+label[for="button-action"] {
+  cursor: pointer;
+}
+
+.rcross{
+  font-size: 70px;
+  color: red;
+  margin-bottom: 20px;
+}
+/****************** Diagram ******************/
+.card-header {
+  background-color: var(--second-color);
+}
+
+.langos {
+  color: #e4b159;
+}
+.frissensultek {
+  color: #dd975e;
+}
+.hamburgerek {
+  color: #654227;
+}
+.hot-dogok {
+  color: #d39459;
+}
+.koretek {
+  color: #d7ae74;
+}
+.ontetek {
+  color: #d7d4cd;
+}
+.desszertek {
+  color: #e0bd98;
+}
+.alkoholos-italok {
+  color: #3d7b65;
+}
+.uditok {
+  color: #bb373a;
+}
+
+.het1 {
+  color: #ecd07c;
+}
+.het2 {
+  color: #b2985c;
+}
+.het3 {
+  color: #8d744e;
+}
+.het4 {
+  color: #e1c16e;
+}
+.het5 {
+  color: #c4a484;
+}

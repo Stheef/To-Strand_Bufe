@@ -1,0 +1,108 @@
+{% include 'bufe/admin/admin_header.html.twig' %}
+<title>Admin rendelések</title>
+<div class="container-fluid">
+<div id="alert-container"></div>
+	<div id="alert-container"></div>
+	<div class="card shadow mb-4">
+		<div class="card-body">
+			<div class="table-responsive">
+				<table class="table table-bordered" id="dataTableOrder" width="100%" cellspacing="0">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Rendelés részletei</th>
+							<th>Hozzászólás</th>
+							<th>Rendelés ideje</th>
+							<th>Állapot</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for order in orders %}
+							<tr id="rendelesid_{{order.id}}">
+								<td>{{ order.id }}</td>
+								<td width="50%">
+									<p>
+										<strong>Felhasználó név:</strong>
+										{{order.user_name}}
+									</p>
+									<p>
+										<strong>Rendelési cím:</strong>
+										{{ order.address}}
+									</p>
+									<p>
+										<strong>Email:</strong>
+										{{order.email}}
+									</p>
+									<p>
+										<strong>Telefonszám:</strong>
+										{{order.phone_number}}
+									</p>
+									<p>
+										<strong>Fizetési módszer:</strong>
+										{{order.payment_method}}
+									</p>
+									<p>
+										<strong>Termék név és mennyiség:</strong>
+										{{order.products}}
+									</p>
+									<p>
+										<strong>Rendelés teljes ára:</strong>
+										{{order.amount}}
+										Ft
+									</p>
+								</td>
+								<td>
+									<p>{{order.comment}}</p>
+								</td>
+								<td width="10%">{{ order.time }}</td>
+								<td>
+									<a id="button-action" class='btn btn-warning' onclick="allapotSzerkesztModal({{order.id}}, {{order.order_status_id}})">
+										<i class="fa-solid fa-edit"></i>
+									</a>
+									<label for="button-action">
+										<span class="fw-bold">{{ order.order_status }}</span>
+									</label>
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="statusDataModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Állapot módosítása</h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+			<div class="modal-body">
+				<form method="POST" id="status_form" enctype="multipart/form-data" onsubmit="return allapotMentes()">
+					<input type="hidden" name="id" id="allapot_id" value="">
+					<div class="form-group">
+						<label for="orderCategory">Rendelés állapota: *</label>
+						<select class="form-select" name="category_id" id="orderCategory" required>
+							<option value="" id="-1" disabled selected>Válasszon rendelési állapotot</option>
+							{% for category in statusCategories %}
+								<option value="{{category.id}}" {{ category.id == order.order_status_id ? 'selected' :''}}>
+									{{category.name}}</option>
+							{% endfor %}
+
+						</select>
+					</div>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">
+						<i class="fa-solid fa-xmark"></i>
+						Mégse</button>
+					<button type="submit" class="btn btn-success float-right" name="btnOK">
+						<i class="fa-solid fa-floppy-disk"></i>
+						Mentés</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% include 'bufe/admin/admin_footer.html.twig' %}

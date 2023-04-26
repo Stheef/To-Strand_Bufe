@@ -1,0 +1,110 @@
+<div id="wrapper">
+	<ul class="navbar-nav sidebar sidebar-dark accordion bg-color" id="accordionSidebar">
+		<a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin-iranyitopult">
+			<div class="sidebar-brand-icon">
+				<img src="App/assets/images/Logo/main_logo.png"></img>
+		</div>
+		<div class="sidebar-brand-text mx-3">Tó-Strand büfé</div>
+	</a>
+
+	<hr class="sidebar-divider my-0">
+
+	<li class="nav-item" id="nav-item">
+		<a class="nav-link" href="/admin-iranyitopult">
+			<i class="fas fa-fw fa-tachometer-alt"></i>
+			<span>Irányítópult</span>
+		</a>
+	</li>
+	<hr class="sidebar-divider">
+
+	<div class="sidebar-heading">
+		Felület
+	</div>
+
+	<li class="nav-item" id="nav-item">
+		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsers" aria-expanded="true" aria-controls="collapseUsers">
+			<i class="fa-solid fa-users"></i>
+			<span class="text-gray-200">Fiókok</span>
+		</a>
+		<div id="collapseUsers" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+			<div class="bg-white py-2 collapse-inner rounded">
+				<a class="collapse-item" href="/admin-felhasznalok">Felhasználó</a>
+				<a class="collapse-item" href="/admin-adminok">Adminisztrátor</a>
+			</div>
+		</div>
+	</li>
+
+	<li class="nav-item" id="nav-item">
+		<a class="nav-link" href="/admin-termekek">
+			<i class="fa-solid fa-utensils"></i>
+			<span class="text-gray-200">Termékek</span>
+		</a>
+	</li>
+
+	<li class="nav-item" id="nav-item">
+		<a class="nav-link collapsed" href="/admin-rendelesek">
+			<i class="fa-solid fa-truck-fast"></i>
+			<span class="text-gray-200">Rendelések</span>
+		</a>
+	</li>
+
+	<li class="nav-item" id="nav-item">
+		<a class="nav-link" href="/admin-penzugyek">
+			<i class="fas fa-fw fa-chart-area"></i>
+			<span class="text-gray-200">Pénzügyek</span>
+		</a>
+	</li>
+
+	<hr class="sidebar-divider d-none d-md-block">
+
+	<div class="text-center d-none d-md-inline">
+		<button class="rounded-circle border-0" id="sidebarToggle"></button>
+	</div>
+</ul>
+<div id="content-wrapper" class="d-flex flex-column">
+	<div id="content">
+		<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+			<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+				<i class="fa fa-bars"></i>
+			</button>
+			<ul class="navbar-nav ml-auto">
+				<div class="topbar-divider d-none d-sm-block"></div>
+				<li class="nav-item dropdown no-arrow">
+					<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span class="mr-2 d-none d-lg-inline text-gray-900 small">{{ userName is not null ? userName : '' }}</span>
+						<i class="fa-solid fa-user-gear"></i>
+					</a>
+					<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+						<a class="dropdown-item" href="/admin-adminok">
+							<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+							Profil
+						</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="/logout" data-toggle="modal" data-target="#logoutModal">
+							<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+							Kilépés
+						</a>
+					</div>
+				</li>
+			</ul>
+			<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="text-center">
+								<i class="fa-solid fa-arrow-right-from-bracket exit-btn"></i>
+								<p>Biztosan kiszeretne lépni?</p>
+							</div>
+							<button type="button" class="btn btn-warning float-left" data-dismiss="modal">
+								<i class="fa-solid fa-arrow-left"></i>
+								Mégse</button>
+							<a href="/logout">
+								<button type="button" class="btn btn-danger float-right">
+									<i class="fa-solid fa-xmark"></i>
+									Kilépés</button>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>

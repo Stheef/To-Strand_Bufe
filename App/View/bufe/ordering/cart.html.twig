@@ -1,0 +1,53 @@
+{% include 'header.html.twig' %}
+<section class="cart">
+	<div class="container py-5">
+		<div class="row d-flex justify-content-center my-4">
+			<div class="col-md-8">
+				<div class="card mb-4">
+					<div class="card-header py-3">
+						<h1 class="mb-0">Kosár</h1>
+					</div>
+					<div class="card-body">
+						<div id="cart-items"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card mb-4">
+					<div class="card-header py-3 summary">
+						<h5 class="mb-0">Összegzés</h5>
+					</div>
+					<div class="card-body">
+						<div class="container">
+							<div class="row gx-0">
+								<div class="col-6 col-md-12 col-lg-8 d-flex align-items-center my-3 fs-2 fw-bold">
+									<ul class="list-unstyled mb-0">
+										<li>Termékek össz ára:</li>
+									</ul>
+								</div>
+								<div class="col-6 col-md-12 col-lg-4 d-flex align-items-center my-3 fs-3 fw-normal">
+									<ul class="list-unstyled mb-0">
+										<li>
+											<span id="cart-total-price">0 Ft</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+
+						<a href="/penztar" class="text-light">
+							<button type="button" class="btn btn-primary btn-lg btn-block mt-4 fw-bold fs-5">Pénztár</button>
+						</a>
+
+						<a href="/etlap" class="text-light">
+							<button type="button" class="btn btn-success btn-lg btn-block mt-4 fw-bold fs-5">Vásárlás folytatása</button>
+						</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% include 'footer_wo_context.html.twig' %}

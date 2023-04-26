@@ -1,0 +1,101 @@
+{% include 'bufe/admin/admin_header.html.twig' %}
+<title>Admin adminisztrátorok</title>
+<div class="container-fluid">
+	<div id="alert-container"></div>
+	<a class='btn add-button mb-2' onclick="adminSzerkesztModal(0)">
+		<i class="fa-solid fa-circle-plus"></i>
+		Új admin</a>
+	<div class="card shadow mb-4">
+		<div class="card-body">
+			<div class="table-responsive">
+				<table class="table table-bordered" id="dataTableAdmin" width="100%" cellspacing="0">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Felhasználó név</th>
+							<th>Műveletek</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for admin in admins %}
+							<tr id="adminid_{{admin.id}}">
+								<td>{{admin.id}}</td>
+								<td class="fw-bold">{{admin.user_name}}</td>
+								<td>
+									<a class='btn btn-warning' onclick="adminSzerkesztModal({{admin.id}})">
+										<i class="fa-solid fa-edit"></i>
+										Módosít</a>
+									<a class='btn btn-danger' onclick="adminTorolModal({{admin.id}})">
+										<i class="fa-solid fa-trash"></i>
+										Töröl</a>
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="adminDataModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title" id="admin_cim">???</h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+			<div class="modal-body">
+				<form method="POST" id="admin_form" enctype="multipart/form-data" onsubmit="return adminMentes()">
+					<input type="hidden" name="id" id="admin_id" value="">
+					<div class="form-group">
+						<label for="user_name">Név*</label>
+						<input class="form-control" type="text" name="user_name" id="admin_nev" required>
+					</div>
+					<div class="form-group">
+						<label for="password">Jelszó (legalább 6 karakter)*</label>
+						<div class="password-wrapper">
+							<input class="form-control" type="password" name="password" id="jelszo" minlength="6">
+							<i class="bx bx-hide show-hide"></i>
+						</div>
+					</div>
+					<div>
+						<p class="text-danger" id="error-message"></p>
+					</div>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">
+						<i class="fa-solid fa-xmark"></i>
+						Mégse</button>
+					<button type="submit" class="btn btn-success float-right" name="btnOK">
+						<i class="fa-solid fa-floppy-disk"></i>
+						Mentés</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="deleteModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<form method="POST" id="delete_form">
+					<input type="hidden" name="id" id="delete_admin_id" value="">
+					<div class="text-center">
+						<i class="fa-regular fa-circle-xmark rcross"></i>
+						<p>Biztosan törölni szeretné a(z)
+							<span id="admin_torol"></span>
+							nevű felhasználót?
+						</p>
+					</div>
+					<button type="button" class="btn btn-warning float-left" data-dismiss="modal">
+						<i class="fa-solid fa-arrow-left"></i>
+						Mégse</button>
+					<button type="button" class="btn btn-danger float-right" name="btnOK" onclick="adminTorles()">
+						<i class="fa-solid fa-xmark"></i>
+						Törlés</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% include 'bufe/admin/admin_footer.html.twig' %}

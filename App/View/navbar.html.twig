@@ -1,0 +1,59 @@
+
+	<div class="row">
+		<header id="header" class="header fixed-top d-flex align-items-center header-transparent">
+			<div class="container d-flex align-items-center justify-content-between">
+				<a href="/to-strand-bufe" class="logo d-flex align-items-center me-auto me-lg-0 animate__animated animate__fadeIn animate__delay-0.5s">
+					<img src="/App/assets/images/Logo/main_logo.png" alt="Logo">
+					<h1>Tó-Strand Büfé</h1>
+				</a>
+				<nav id="navbar" class="navbar no-border">
+					<ul class="animate__animated animate__fadeIn animate__delay-0.7s">
+						<li>
+							<a href="/rolunk">Rólunk</a>
+						</li>
+						<li>
+							<a href="/etlap">Étlap</a>
+						</li>
+						<li>
+							<a href="/kapcsolat">Kapcsolat</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="icons animation animate__animated animate__fadeIn animate__delay-0.7s">
+					{% if session.user_id is defined %}
+						<a href="/profil/{{ session.user_id }}">
+							<i class="fa-solid fa-user"></i>
+						</a>
+					{% else %}
+						<a href="/belepes">
+							<i class="fa-solid fa-user"></i>
+						</a>
+					{% endif %}
+					<a id="cart-btn" class="dropdown" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-boundary="window">
+						<i class="fa-solid fa-shopping-cart"></i>
+						<span class="badge badge-counter" id="cart-count">0</span>
+					</a>
+					<div class="dropdown-menu dropdown-menu-end shopping-cart" aria-labelledby="dropdownMenuLink">
+						<div class="text-center">
+							<h1>Kosár</h1>
+						</div>
+						<div class="dropdown-divider"></div>
+						<div
+							id="cart-item" class="cart-items-container">
+						</div>
+						<div class="dropdown-divider"></div>
+						<div class="text-center">
+							<h4 class="total">
+								Összesen :
+								<span id="cart-total">0 Ft</span>
+							</h4>
+							<a href="/kosar" class="btn btn-success tovabb">Tovább a kosárhoz</a>
+						</div>
+					</div>
+				</div>
+				<i class="mobile-nav-toggle mobile-nav-show bi bi-list animation animate__animated animate__fadeIn animate__delay-0.7s"></i>
+				<i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x animation"></i>
+			</div>
+		</header>
+
+

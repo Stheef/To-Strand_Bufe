@@ -1,0 +1,151 @@
+{% include 'header.html.twig' %}
+<div class="contact-whole-bg background-filter">
+	<div class="container u-non-blurred" data-aos="fade-up" data-aos-delay="150">
+		<div class="contact-parent u-non-blurred">
+			<div class="contact-child child1 u-non-blurred">
+				<h2 data-aos="fade-up" data-aos-delay="350">Lépjen kapcsolatba velünk</h2>
+				<p data-aos="fade-up" data-aos-delay="350">
+					<i class="fas fa-map-marker-alt"></i>
+					Címünk
+					<br/>
+					<span>
+						Petőfi út 61.
+						<br/>
+						Bánk, Nógrád megye
+					</span>
+				</p>
+				<p data-aos="fade-up" data-aos-delay="550">
+					<i class="fas fa-phone-alt"></i>
+					Hívjon minket
+					<br/>
+					<span>
+						06 70 123 4567</span>
+				</p>
+				<p data-aos="fade-up" data-aos-delay="750">
+					<i class=" far fa-envelope"></i>
+					Email címünk
+					<br/>
+					<span>to-strand_bufe@gmail.com</span>
+				</p>
+			</div>
+			<div class="contact-child child2 u-non-blurred">
+				<div class="inside-contact">
+					<h2>Írjon nekünk</h2>
+					<form action="/kapcsolat" method="POST" class="needs-validation" novalidate>
+						<div class="form-group mb-3">
+							<div class="field">
+								<label for="name">Név *</label>
+								<input id="name" class="form-control" name="name" type="text" required placeholder="Pl.: Teszt Elek"/>
+								<div class="invalid-feedback">
+									Kérem írja be a nevét
+								</div>
+							</div>
+						</div>
+						<div class="form-group mb-3">
+							<div class="field">
+								<label for="email">Email *</label>
+								<input id="email" class="form-control" name="email" type="email" required placeholder="Pl.: to.strad.bufe@gmail.com"/>
+								<div class="invalid-feedback">
+									Kérem írja be az email címjét
+								</div>
+							</div>
+						</div>
+						<div class="form-group mb-3">
+							<div class="field">
+								<label for="phone">Telefonszám *</label>
+								<input type="tel" pattern="((?:\+?3|0)6)(?:-|\()?(\d{1,2})(?:-|\))?(\d{3})-?(\d{3,4})" class="form-control" id="phone" name="phone" placeholder="Pl.: +36301234567" required="required" maxlength="12"/>
+								<div class="invalid-feedback">
+									Kérem írja be a telefonszámát
+								</div>
+							</div>
+						</div>
+						<div class="mb-3">
+							<div class="field">
+								<label for="topic">Tárgy *</label>
+								<select class="form-select" name="topic" required aria-label="select example">
+									<option selected disabled value="">Kérem válasszon</option>
+									<option value="velemeny">Vélemény</option>
+									<option value="reklamacio">Reklamáció</option>
+									<option value="hiba">Hiba</option>
+								</select>
+								<div class="invalid-feedback">
+									Kérem válasszon a tárgyak közül
+								</div>
+							</div>
+						</div>
+
+						<div class="mb-3">
+							<div class="field">
+								<label for="validationTextarea" class="form-label">Üzenet *</label>
+								<textarea class="form-control" id="validationTextarea" name="message" placeholder="Pl.: Nagyon fincsi, nagyon jó :)" required></textarea>
+								<div class="invalid-feedback">
+									Kérem írja be a kívánt üzenetét
+								</div>
+							</div>
+						</div>
+						<div class="d-flex justify-content-center full-width">
+							<div class="form-group full-width">
+								<button class="btn btn-dark full-width-btn" type="submit" id="btn_sender">
+									Küldés
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+document.querySelector('form').addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    let form = event.target;
+    if (!form.checkValidity()) {
+        form.classList.add('was-validated');
+        return;
+    }
+
+    let response = await fetch('/kapcsolat', {
+    method: 'POST',
+    body: new URLSearchParams(new FormData(form)),
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+    },
+});
+
+
+    if (response.ok) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Üzenet elküldve',
+            text: 'Az üzenetet sikeresen elküldtük. Köszönjük, hogy felvette velünk a kapcsolatot!',
+			confirmButtonText: 'Bezár',
+ 			confirmButtonColor: '#b08e6b',
+        });
+
+        form.reset();
+        form.classList.remove('was-validated');
+    } else {
+        Swal.fire({
+            icon: 'error',
+            title: 'Hiba',
+            text: 'Az üzenet küldése közben hiba történt. Kérjük, próbálja meg újra!',
+			confirmButtonText: 'Bezár',
+ 			confirmButtonColor: '#b08e6b',
+        });
+    }
+});
+</script>
+<style>
+.swal2-popup {
+  font-size: 1.5rem;
+  width: 500px;
+height: 400px;
+}
+.swal2-title {
+  font-size: 4rem;
+}
+</style>
+
+{% include 'footer.html.twig' %}

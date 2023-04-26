@@ -1,0 +1,24 @@
+{
+    "name": "3111tan-14/to_rest",
+    "type": "project",
+    "require-dev": {
+        "phpmailer/phpmailer": "^6.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "3111tan14\\ToRest\\": "src/",
+            "App\\Controller\\": "App/Controller/",
+            "App\\Lib\\": "App/Lib/",
+            "App\\Model\\": "App/Model/",
+            "App\\css\\": "App/css"
+        }
+    },
+    "require": {
+        "twig/twig": "^3.5",
+        "symfony/security-bundle": "^6.2",
+        "symfony/console": "^6.2",
+        "symfony/framework-bundle": "^5.0",
+        "symfony/dotenv": "^6.2",
+        "twig/extra-bundle": "3.1.0"
+    }
+}

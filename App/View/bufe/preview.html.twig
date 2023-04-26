@@ -1,0 +1,71 @@
+{% include 'header.html.twig' %}
+<div class="preview-page">
+	{% if item %}
+		<div class="product-info" data-id="{{item.id}}">
+			<div class="product-img">
+				{% if item.image != "" %}
+					<img src="/App/assets/product_images/{{item.image}}" alt="Termék képe" class="product-image"/>
+				{% else %}
+					<img src="/App/assets/images/no_image.png" alt="Termék képe" class="product-image"/>
+				{% endif %}
+			</div>
+			<div class="product-details">
+				<h2 class="product-name">{{ item.name }}</h2>
+				<p class="product-category">{{ item.catname }}</p>
+				<p class="product-price text-success">{{ item.unit_price }}
+					Ft</p>
+				<p class="product-description">{{ item.description }}</p>
+				<p class="product-allergens">Allergének: <span>*Nem ismert*</span></p>
+				<br>
+				<a class="to-cart-btn add-to-cart">
+					<i class="fa-solid fa-cart-plus"></i> Kosárba
+				</a>
+			</div>
+		</div>
+	{% else %}
+		<p>A keresett termék nem található.</p>
+	{% endif %}
+	<div class="products">
+		<h1 class="preview-title">Ajánlott termékeink</h1>
+		<section class="main-content">
+			<div class="container">
+				<div class="row">
+					{% for item in items %}
+						<div class="blokkok col-md-4">
+							<a href="/etlap/{{item.id}}" class="food-card-link">
+								<div class="food-card">
+									<div class="food-card_img">
+										{% if item.image != "" %}
+											<img src="/App/assets/product_images/{{item.image}}" alt="Termék képe"/>
+										{% else %}
+											<img src="/App/assets/images/no_image.png" alt="Termék képe"/>
+										{% endif %}
+									</div>
+									<div class="food-card_content" data-category="{{item.name}}">
+										<div class="food-card_title-section">
+											<h5 class="food-card_title">{{ item.name }}</h5>
+											<p class="food-card_author">{{ item.catname }}</p>
+										</div>
+										<div class="food-card_bottom-section">
+											<hr>
+											<div class="space-between">
+												<div class="food-card_price fw-bold">
+													<span>{{item.unit_price}}
+														Ft</span>
+												</div>
+												<a class="food-card_cart">
+													<i class="fa-solid fa-cart-plus"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+{% include 'footer_wo_context.html.twig' %}
