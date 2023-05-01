@@ -1,9 +1,4 @@
-
-<div style="background-color: white; color: white;">
-
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/95534268/234797978-2ffa4c04-ac66-4281-aa4e-99f8356584aa.png" width="600">
+  <img src="https://user-images.githubusercontent.com/95534268/235441991-6e6b68ec-4c75-4c7a-ae31-9f50abb75cb0.png" width="600">
 </p>
-
-### :hammer_and_wrench: Languages and Tools :
-</div>
+ ## :hammer_and_wrench: Felhasznált technológiák :
