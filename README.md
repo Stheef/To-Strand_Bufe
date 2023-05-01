@@ -3,8 +3,7 @@
 </div>
 
 #
-A projekt egy webes alkalmazás, ami egy büfének ad lehetőséget regisztrációra/belépésre, rendelés leadására és az adminisztrátor felület kezelésére.
-
+A **Tó-Strand büfé** webes alkalmazása egy modern és reszponzív felületet kínál. Az alkalmazáson belül lehetőség van a termékek megtekintésére, kosárba helyezésére, regisztrációra/belépésre és rendelés leadására. Az adminisztrátori felület segítségével az adminisztrátorok a termékek, adminisztrátorok és rendelések **CRUD** műveleteit végezhetik el, és megtekinthetik a napi, heti, havi és éves költéseket kártyák és diagramok formájában.
 
 ## 📋 Jellemzők
 
@@ -15,7 +14,7 @@ A projekt egy webes alkalmazás, ami egy büfének ad lehetőséget regisztráci
 - Emailek küldése
 - Adminisztrátori felület
 - CRUD
-
+<br />
 
 ## 🛠 Használt technológiák
 
@@ -33,16 +32,16 @@ A projekt egy webes alkalmazás, ami egy büfének ad lehetőséget regisztráci
   ![Visual Studio Code](https://img.shields.io/badge/-Visual%20Studio%20Code-333333?style=flat&logo=visual-studio-code&logoColor=007ACC)
 - 🖥 &nbsp;
   ![Photoshop](https://img.shields.io/badge/-Photoshop-333333?style=flat&logo=adobe-photoshop)
-
+<br />
 
 ## 📦 Telepítés
 
-Az alkalmazást a kovetkezo képpen kell elindítani
+Az alkalmazást a következő képpen kell elindítani:
 - GitHub-ról töltse le a projektet
 - xampp/htdocs mappájába helyezze és csomagolja ki a fájlt
 - Indítsa el a XAMPP-ot
 - phpMyAdmin-ba töltse fel az SQL-t amit megtalál az "_install" mappában
-- Ezután nyissa meg a parancssort, majd írd be a következő sorokat:
+- Ezután nyissa meg a parancssort, majd írja be a következő sorokat:
 
 
 ```bash
@@ -52,11 +51,13 @@ Az alkalmazást a kovetkezo képpen kell elindítani
   cd To-Strand_Bufe
   php -S localhost:8000
 ```
+<br />
     
 ## 📝 Dokumentáció
 
 [Dokumentáció](https://drive.google.com/drive/u/1/folders/1zvVE3KleMCPtsTfqoBdKaNs3LxaAgV1l)
 
+<br />
 
 ## 👨‍💻 Készítők
 
