@@ -1,17 +1,30 @@
-<p align="center">
+<div align="center">
   <img src="https://user-images.githubusercontent.com/95534268/235441991-6e6b68ec-4c75-4c7a-ae31-9f50abb75cb0.png" width="600">
-</p>
-<h3> A projekt </h3>
+</div>
 
-<h3> 🛠 &nbsp;Használt technológiák</h3>
+#
+A projekt egy webes alkalmazás, ami egy büfének ad lehetőséget regisztrációra/belépésre, rendelés leadására és az adminisztrátor felület kezelésére.
+
+
+## 📋 Jellemzők
+
+- Modern, reszponzív weboldal
+- Regisztráció és belépés
+- Fiók adatok változtatása
+- Rendelés leadása
+- Emailek küldése
+- Adminisztrátori felület
+- CRUD
+
+
+## 🛠 Használt technológiák
 
 - 🌐 &nbsp;
-  ![Twig](https://img.shields.io/badge/-Twig-333333?logo=data:image/png;base64,https://user-images.githubusercontent.com/95534268/235493034-b76fc77b-3390-449b-9686-37cb84bf5a8d.png)
+  ![Symfony](https://img.shields.io/badge/-Symfony-333333?style=flat&logo=symfony)
   ![PHP](https://img.shields.io/badge/-PHP-333333?style=flat&logo=php)
   ![CSS](https://img.shields.io/badge/-CSS-333333?style=flat&logo=CSS3&logoColor=1572B6)
   ![JavaScript](https://img.shields.io/badge/-JavaScript-333333?style=flat&logo=javascript)
   ![Bootstrap](https://img.shields.io/badge/-Bootstrap-333333?style=flat&logo=bootstrap&logoColor=563D7C)
-  ![PHPMailer](https://img.shields.io/badge/-PHPMailer-333333?style=flat&logo=phpmailer)
 - 🛢 &nbsp;
   ![MySQL](https://img.shields.io/badge/-MySQL-333333?style=flat&logo=mysql)
 - ⚙️ &nbsp;
@@ -21,4 +34,32 @@
 - 🖥 &nbsp;
   ![Photoshop](https://img.shields.io/badge/-Photoshop-333333?style=flat&logo=adobe-photoshop)
 
-<br/>
+
+## 📦 Telepítés
+
+Az alkalmazást a kovetkezo képpen kell elindítani
+- GitHub-ról töltse le a projektet
+- xampp/htdocs mappájába helyezze és csomagolja ki a fájlt
+- Indítsa el a XAMPP-ot
+- phpMyAdmin-ba töltse fel az SQL-t amit megtalál az "_install" mappában
+- Ezután nyissa meg a parancssort, majd írd be a következő sorokat:
+
+
+```bash
+  c:
+  cd xampp
+  cd htdocs
+  cd To-Strand_Bufe
+  php -S localhost:8000
+```
+    
+## 📝 Dokumentáció
+
+[Dokumentáció](https://drive.google.com/drive/u/1/folders/1zvVE3KleMCPtsTfqoBdKaNs3LxaAgV1l)
+
+
+## 👨‍💻 Készítők
+
+- [@Márk](https://github.com/Stheef)  [@Imán](https://github.com/yunalai99)
+
+
