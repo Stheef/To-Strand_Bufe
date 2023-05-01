@@ -61,6 +61,6 @@ Az alkalmazást a következő képpen kell elindítani:
 
 ## 👨‍💻 Készítők
 
-- [@Márk](https://github.com/Stheef)  [@Imán](https://github.com/yunalai99)
+- [@Márk](https://github.com/Stheef)  [@Immánuel](https://github.com/yunalai99)
 
 
