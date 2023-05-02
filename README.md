@@ -12,6 +12,8 @@ A **Tó-Strand büfé** webes alkalmazása egy modern és reszponzív felületet
 - Fiók adatok változtatása
 - Rendelés leadása
 - Emailek küldése
+- Adminisztrációs feladatok, felület
+- CRUD 
 
 <br />
 
